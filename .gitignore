@@ -1,0 +1,4 @@
+*.log
+/main.pdf
+*.gz
+*.aux
