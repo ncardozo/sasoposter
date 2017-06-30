@@ -106,13 +106,15 @@ Concurrent development means that all the actions a developer does in the IDE ar
 In a project, each developer is assigned an unique color which is used to highlight the contributions of code said developer has done. Additionally, each developer has a contribution state that determines if his contributions are visible or not to the rest of the team. With contribution management, any developer can easily identify the contributions of each team member and toggle their visibility as needed. This feature helps mainly in the resolution of conflicts and boosts the awareness of the work done by each team member.
 There can be many product versions at a time in a project. Developers have the option of easily creating new product versions which are snapshots of the current contents of the code editor. Thanks to the concurrent development feature, all the team members obtain a new version the moment it is created. The developers can also switch between versions and view immediately the contents of the editor at the time the version was created or edited. The time required for managing different product versions is reduced significatively with this feature.
 To implement the features described previously, various contexts must be considered. Each developer and each product version represents a different context. To achieve this context management, we used the Context Oriented Programming paradigm (COP), specifically the Context Traits implementation. Context Traits provides the necessary elements to define a specific behavior during runtime for each context. CollabIDE features were build making use of these elements, which helped define the contribution state of a developer among other elements.
+For the code editor of CollabIDE we used Firepad which is an open source collaborative text editor. Firepad stores all the changes made in the editor in Firebase’s real time non relational database. Additional to the data Firepad stores, we store user and product versions data in Firebase.
 
 %%
 \section{Closing Remarks}
 \label{sec:conclusion}
 
-
-
+We conducted an experiment to measure how effective CollabIDE was at reducing overhead problems in both Distributed Software Development and Software Product Lines. In each experiment, we asked a group of developers to solve some simple programming exercises using either CollabIDE or a conventional IDE. A different test was made for each development model. Participants were also asked to follow specific instructions to emulate the workflow that is normally carried on each development model. Two metrics were taken for each test, the first one was the percentage of completed exercises and the second one was the amount of time spent doing actions related to version control.
+At the end of the experiment, the metrics showed that the developers which used CollabIDE obtained a higher completion percentage than those who used the other IDEs. The developers who used CollabIDE also spent significantly less time doing actions related to version control than the developers that used other IDEs.
+With the experiment results we concluded that CollabIDE effectively helps in reducing the overhead problems. Although the scale of the experiment was small, it shows the potential that an approach like CollabIDE has. Thanks to the flexibility of the technology used to create the IDE, there is a range of improvements that can still me made to CollabIDE to make it even better at solving the problem.  
 
 
 %
