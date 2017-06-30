@@ -97,11 +97,15 @@ One software development model that has gained substantial popularity in recent 
 Another software development model that has acquired popularity due to the competitive advantages it brings to development teams is the Software Product Lines development model (SPL). Like the DSD model, the SPL also suffers from an overhead problem. In this case the problem is caused by the initial coding and configuration that must be done at the beginning of a project.
 With CollabIDE, we aim to solve the overhead problems that exists in these development models with features that aim to reduce the time developers must spend doing actions related to version control or setting up a project that uses SPL.
 
-
 %%
 \section{CollabIDE}
 \label{sec:collab-ide}
 
+CollabIDE is an integrated development environment on the cloud that lets development teams collaborate on a software project. CollabIDE has three key features which help reduce the overhead problems described previously. These features are concurrent development, contribution management and version management.
+Concurrent development means that all the actions a developer does in the IDE are synchronic. This lets all developers view in real time what changes are being made by other team members in the code editor or the control panel. This feature eliminates the need of constantly having to obtain the latest changes made by other team members. 
+In a project, each developer is assigned an unique color which is used to highlight the contributions of code said developer has done. Additionally, each developer has a contribution state that determines if his contributions are visible or not to the rest of the team. With contribution management, any developer can easily identify the contributions of each team member and toggle their visibility as needed. This feature helps mainly in the resolution of conflicts and boosts the awareness of the work done by each team member.
+There can be many product versions at a time in a project. Developers have the option of easily creating new product versions which are snapshots of the current contents of the code editor. Thanks to the concurrent development feature, all the team members obtain a new version the moment it is created. The developers can also switch between versions and view immediately the contents of the editor at the time the version was created or edited. The time required for managing different product versions is reduced significatively with this feature.
+To implement the features described previously, various contexts must be considered. Each developer and each product version represents a different context. To achieve this context management, we used the Context Oriented Programming paradigm (COP), specifically the Context Traits implementation. Context Traits provides the necessary elements to define a specific behavior during runtime for each context. CollabIDE features were build making use of these elements, which helped define the contribution state of a developer among other elements.
 
 %%
 \section{Closing Remarks}
