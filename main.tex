@@ -12,7 +12,7 @@
 %
 %-----------------------------------------------------------------------------
 
-\documentclass[10pt, conference, draft]{IEEEtran}
+\documentclass[10pt, conference]{IEEEtran}
 
 \input{preamble}
 
@@ -22,6 +22,7 @@
 % --- End of Author Metadata ---
 
 \title{CollabIDE: A collaborative IDE in the cloud with contribution and version managing}
+%Gearing development of variability systems through self-adaptation
 
 %
 % You need the command \numberofauthors to handle the 'placement
@@ -92,29 +93,89 @@ Context-oriented programming, Collaborative development
 \section{Motivation}
 \label{sec:motivation}
 
-Version Control Systems (VSC) have become a fundamental part in software development projects. Among the benefits of using version control are having the change history of every file for traceability and branching and merging for working on independent streams of changes. With version control, development teams see an improvement in efficiency and reduce the risk of losing progress in the project.
-One software development model that has gained substantial popularity in recent years is the Distributed Software Development model (DSD). This model brings various advantages to development teams like costs reduction, increased productivity and ease of finding human talent across the globe. In this model team members are geographically distributed and must collaborate remotely. Mechanisms like commiting, pushing and merging help team members solve synchronization and coordination problems that arise in DSD. However, these mechanisms introduce an overhead problem that stems from the interruption in the coding workflow the developers make when they perform an action related to version control. Initially this overhead problem may not have much impact on the project but in the long term, the productivity of the team can be negatively affected.
-Another software development model that has acquired popularity due to the competitive advantages it brings to development teams is the Software Product Lines development model (SPL). Like the DSD model, the SPL also suffers from an overhead problem. In this case the problem is caused by the initial coding and configuration that must be done at the beginning of a project.
-With CollabIDE, we aim to solve the overhead problems that exists in these development models with features that aim to reduce the time developers must spend doing actions related to version control or setting up a project that uses SPL.
+Version Control Systems (VSC) have become a fundamental part in software development projects. 
+Among the benefits of using version control are having the change history of every file for traceability 
+and branching and merging for working on independent streams of changes. With version control, 
+development teams see an improvement in efficiency and reduce the risk of losing progress in the 
+project.
+One software development model that has gained substantial popularity in recent years is the 
+Distributed Software Development model (DSD). This model brings various advantages to 
+development teams like costs reduction, increased productivity and ease of finding human talent 
+across the globe. In this model team members are geographically distributed and must collaborate 
+remotely. Mechanisms like commiting, pushing and merging help team members solve synchronization 
+and coordination problems that arise in DSD. However, these mechanisms introduce an overhead 
+problem that stems from the interruption in the coding workflow the developers make when they 
+perform an action related to version control. Initially this overhead problem may not have much impact 
+on the project but in the long term, the productivity of the team can be negatively affected.
+Another software development model that has acquired popularity due to the competitive advantages 
+it brings to development teams is the \ac{SPL} development model~\cite{pohl+05sple}. Like the DSD 
+model, the SPL also suffers from an overhead problem. In this case the problem is caused by the initial 
+coding and configuration that must be done at the beginning of a project.
+With CollabIDE, we aim to solve the overhead problems that exists in these development models with 
+features that aim to reduce the time developers must spend doing actions related to version control or 
+setting up a project that uses \acp{SPL}.
 
 %%
 \section{CollabIDE}
 \label{sec:collab-ide}
 
-CollabIDE is an integrated development environment on the cloud that lets development teams collaborate on a software project. CollabIDE has three key features which help reduce the overhead problems described previously. These features are concurrent development, contribution management and version management.
-Concurrent development means that all the actions a developer does in the IDE are synchronic. This lets all developers view in real time what changes are being made by other team members in the code editor or the control panel. This feature eliminates the need of constantly having to obtain the latest changes made by other team members. 
-In a project, each developer is assigned an unique color which is used to highlight the contributions of code said developer has done. Additionally, each developer has a contribution state that determines if his contributions are visible or not to the rest of the team. With contribution management, any developer can easily identify the contributions of each team member and toggle their visibility as needed. This feature helps mainly in the resolution of conflicts and boosts the awareness of the work done by each team member.
-There can be many product versions at a time in a project. Developers have the option of easily creating new product versions which are snapshots of the current contents of the code editor. Thanks to the concurrent development feature, all the team members obtain a new version the moment it is created. The developers can also switch between versions and view immediately the contents of the editor at the time the version was created or edited. The time required for managing different product versions is reduced significatively with this feature.
-To implement the features described previously, various contexts must be considered. Each developer and each product version represents a different context. To achieve this context management, we used the Context Oriented Programming paradigm (COP), specifically the Context Traits implementation. Context Traits provides the necessary elements to define a specific behavior during runtime for each context. CollabIDE features were build making use of these elements, which helped define the contribution state of a developer among other elements.
-For the code editor of CollabIDE we used Firepad which is an open source collaborative text editor. Firepad stores all the changes made in the editor in Firebase’s real time non relational database. Additional to the data Firepad stores, we store user and product versions data in Firebase.
+CollabIDE is an integrated development environment on the cloud that lets development teams 
+collaborate on a software project. CollabIDE has three key features which help reduce the overhead 
+problems described previously. These features are concurrent development, contribution management 
+and version management.
+Concurrent development means that all the actions a developer does in the IDE are synchronic. This 
+lets all developers view in real time what changes are being made by other team members in the code 
+editor or the control panel. This feature eliminates the need of constantly having to obtain the latest 
+changes made by other team members. 
+In a project, each developer is assigned an unique color which is used to highlight the contributions of 
+code said developer has done. Additionally, each developer has a contribution state that determines if 
+his contributions are visible or not to the rest of the team. With contribution management, any 
+developer can easily identify the contributions of each team member and toggle their visibility as 
+needed. This feature helps mainly in the resolution of conflicts and boosts the awareness of the work 
+done by each team member.
+There can be many product versions at a time in a project. Developers have the option of easily 
+creating new product versions which are snapshots of the current contents of the code editor. Thanks 
+to the concurrent development feature, all the team members obtain a new version the moment it is 
+created. The developers can also switch between versions and view immediately the contents of the 
+editor at the time the version was created or edited. The time required for managing different product 
+versions is reduced significatively with this feature.
+To implement the features described previously, various contexts must be considered. Each developer 
+and each product version represents a different context. To achieve this context management, we used 
+the \ac{COP} paradigm~\cite{salvaneschi+12survey}, specifically the Context Traits implementation. 
+Context Traits provides the necessary elements to define a specific behavior during runtime for each 
+context. CollabIDE features were build making use of these elements, which helped define the 
+contribution state of a developer among other elements.
+For the code editor of CollabIDE we used Firepad\footnote{\url{https://firepad.io/\#1}} which is an open 
+source collaborative text editor. Firepad stores all the changes made in the editor in Firebase’s real 
+time non relational database. Additional to the data Firepad stores, we store user and product versions 
+data in Firebase.
+
+%%
+\section{Validation}
+\label{sec:validation}
+
+We conducted an experiment to measure how effective CollabIDE was at reducing overhead problems 
+in both Distributed Software Development and Software Product Lines. In each experiment, we asked 
+a group of developers to solve some simple programming exercises using either CollabIDE or a 
+conventional IDE. A different test was made for each development model. Participants were also 
+asked to follow specific instructions to emulate the workflow that is normally carried on each 
+development model. Two metrics were taken for each test, the first one was the percentage of 
+completed exercises and the second one was the amount of time spent doing actions related to 
+version control.
+At the end of the experiment, the metrics showed that the developers which used CollabIDE obtained 
+a higher completion percentage than those who used the other IDEs. The developers who used 
+CollabIDE also spent significantly less time doing actions related to version control than the 
+developers that used other IDEs.
 
 %%
 \section{Closing Remarks}
 \label{sec:conclusion}
 
-We conducted an experiment to measure how effective CollabIDE was at reducing overhead problems in both Distributed Software Development and Software Product Lines. In each experiment, we asked a group of developers to solve some simple programming exercises using either CollabIDE or a conventional IDE. A different test was made for each development model. Participants were also asked to follow specific instructions to emulate the workflow that is normally carried on each development model. Two metrics were taken for each test, the first one was the percentage of completed exercises and the second one was the amount of time spent doing actions related to version control.
-At the end of the experiment, the metrics showed that the developers which used CollabIDE obtained a higher completion percentage than those who used the other IDEs. The developers who used CollabIDE also spent significantly less time doing actions related to version control than the developers that used other IDEs.
-With the experiment results we concluded that CollabIDE effectively helps in reducing the overhead problems. Although the scale of the experiment was small, it shows the potential that an approach like CollabIDE has. Thanks to the flexibility of the technology used to create the IDE, there is a range of improvements that can still me made to CollabIDE to make it even better at solving the problem.  
+
+With the experiment results we concluded that CollabIDE effectively helps in reducing the overhead 
+problems. Although the scale of the experiment was small, it shows the potential that an approach like 
+CollabIDE has. Thanks to the flexibility of the technology used to create the IDE, there is a range of 
+improvements that can still me made to CollabIDE to make it even better at solving the problem.  
 
 
 %
