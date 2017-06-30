@@ -2,3 +2,6 @@
 /main.pdf
 *.gz
 *.aux
+*.bbl
+*.blg
+*.out
