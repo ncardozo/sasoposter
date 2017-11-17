@@ -12,7 +12,7 @@
 %
 %-----------------------------------------------------------------------------
 
-\documentclass[10pt, conference]{IEEEtran}
+\documentclass[draft]{llncs}
 
 \input{preamble}
 
@@ -51,19 +51,16 @@
 
 
 \author{
+Santiago Beltran \and Nicol\'{a}s Cardozo}
 
-\IEEEauthorblockN{Santiago Beltran}
-\IEEEauthorblockA{Systems and Computing Engineering Department\\
+\institute{
+Systems and Computing Engineering Department\\
 Universidad de los Andes\\ 
 Bogot\'a, Colombia\\
-s.beltran10@uniandes.edu.co}
-\and
-\IEEEauthorblockN{Nicol\'{a}s Cardozo}
-\IEEEauthorblockA{Systems and Computing Engineering Department\\
-Universidad de los Andes\\ 
-Bogot\'a, Colombia\\
-n.cardozo@uniandes.edu.co}
 }
+%s.beltran10@uniandes.edu.co
+%n.cardozo@uniandes.edu.co}
+
 
 
 % Just remember to make sure that the TOTAL number of authors
@@ -72,8 +69,8 @@ n.cardozo@uniandes.edu.co}
 
 \maketitle
 
-%\begin{abstract}
-%\end{abstract}
+\begin{abstract}
+\end{abstract}
 
 
 %
@@ -81,16 +78,15 @@ n.cardozo@uniandes.edu.co}
 % http://dl.acm.org/ccs.cfm
 % Please copy and paste the code instead of the example below. 
 %
-\begin{IEEEkeywords}
-Context-oriented programming, Collaborative development
-\end{IEEEkeywords}
+%\begin{IEEEkeywords}
+%Context-oriented programming, Collaborative development
+%\end{IEEEkeywords}
 
 
-\IEEEpeerreviewmaketitle
 
 
 %%
-\section{Motivation}
+\section{Introduction}
 \label{sec:motivation}
 
 Version Control Systems (VSC) have become a fundamental part in software development projects. 
@@ -168,7 +164,7 @@ CollabIDE also spent significantly less time doing actions related to version co
 developers that used other IDEs.
 
 %%
-\section{Closing Remarks}
+\section{Conclusion}
 \label{sec:conclusion}
 
 
@@ -182,7 +178,7 @@ improvements that can still me made to CollabIDE to make it even better at solvi
 %\balancecolumns
 
 %\printbibliography
-\bibliographystyle{abbrv}
+\bibliographystyle{splncs03}
 \bibliography{local,bib/compsci,bib/general,bib/learning}  
 
 
