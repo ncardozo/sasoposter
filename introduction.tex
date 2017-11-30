@@ -1,32 +1,41 @@
-%
-%
+% $ Id: introduction.tex  $
+% !TEX root = main.tex
 
 %%
 \section{Introduction}
 \label{sec:introduction}
 
-Version Control Systems (VSC) have become a fundamental part in software development projects. 
-Among the benefits of using version control are having the change history of every file for traceability 
-and branching and merging for working on independent streams of changes. With version control, 
-development teams see an improvement in efficiency and reduce the risk of losing progress in the 
-project.
-One software development model that has gained substantial popularity in recent years is the 
-Distributed Software Development model (DSD). This model brings various advantages to 
+\acp{VCS}, as subversion\footnote{\url{http://subversion.apache.org/}} and 
+Git,\footnote{\url{http://git-scm.com}} are now fundamental to software development processes, as they 
+improve productivity by reducing the risk of losing progress and enable to parallelize coding efforts for 
+development and maintenance activities in a project~\cite{spinellis05}.
+The main benefits of using \acp{VCS} in software development processes are:
+\begin{enumerate*}[label=(\arabic*)]
+\item traceability over each file's change history, 
+\item concurrent editing, and 
+\item branching and merging of code extracts on independent streams of changes. 
+\end{enumerate*}
+Asa cause of the great success of \acp{VCS}, the \ac{DSD} development model gained substantial popularity, as it opens the possibility for developers in different locations and time-zones working on a single product with minimum disruption. This model brings various advantages to 
 development teams like costs reduction, increased productivity and ease of finding human talent 
-across the globe. In this model team members are geographically distributed and must collaborate 
-remotely. Mechanisms like commiting, pushing and merging help team members solve synchronization 
-and coordination problems that arise in DSD. However, these mechanisms introduce an overhead 
+across the globe. Mechanisms like committing, pushing and merging help team members solve synchronization 
+and coordination problems that arise in \ac{DSD}. However, these mechanisms introduce an overhead 
 problem that stems from the interruption in the coding workflow the developers make when they 
 perform an action related to version control. Initially this overhead problem may not have much impact 
 on the project but in the long term, the productivity of the team can be negatively affected.
 Another software development model that has acquired popularity due to the competitive advantages 
-it brings to development teams is the \ac{SPL} development model~\cite{pohl+05sple}. Like the DSD 
+it brings to development teams is the \ac{SPL} development model~\cite{pohl+05sple}. Like the \ac{DSD} 
 model, the SPL also suffers from an overhead problem. In this case the problem is caused by the initial 
 coding and configuration that must be done at the beginning of a project.
+
+This paper presents CollabIDE, a collaborative environment for 
+distributed development designed for automated versioning and product line generation. since the goal 
+of CollabIDE is to increase developers' productivity, we conducted a small empirical study with users 
+working in distributed teams, measuring the time to complete different tasks using versioning, and the 
+ease to release different products' functionality based on recorded versions. 
+
 With CollabIDE, we aim to solve the overhead problems that exists in these development models with 
 features that aim to reduce the time developers must spend doing actions related to version control or 
 setting up a project that uses \acp{SPL}.
-
 
 
 
