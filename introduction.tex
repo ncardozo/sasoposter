@@ -27,9 +27,11 @@ Moreover, frequent interaction with the \ac{VCS} increases the development time 
 %what
 To address the aforementioned problems when using \acp{VCS} to track program versions or manage \acp{SPL}, we propose an integrated development environment, CollabIDE, focused on the distributed  collaboration in software product development. CollabIDE integrates an automated \ac{VCS}, and a lightweight \ac{SPL} model for the generation of multiple variants from a single code base. 
 %How
+CollabIDE is built on top of the dynamic behavior adaptation model proposed by \ac{COP}~\cite{salvaneschi13taas}. To use this model, we define versions as context objects (based on available information \eg the logged in user).
+Product variants are managed based on the defined versions, where a variant is generated using a subset of all defined versions.
 
 To validate CollabIDE, we conducted a small empirical study with users 
-working in distributed teams, measuring the time to complete different tasks using versioning, and the 
+working in distributed teams. Each team had to develop different programming exercises following a sequence of commands to share code with their development team, and release different product variants. For each team we measured the time to complete the tasksdifferent tasks using versioning, and the 
 ease to release different products' functionality based on recorded versions. 
 
 
@@ -39,4 +41,3 @@ ease to release different products' functionality based on recorded versions.
 With CollabIDE, we aim to solve the overhead problems that exists in these development models with 
 features that aim to reduce the time developers must spend doing actions related to version control or 
 setting up a project that uses \acp{SPL}.
-
