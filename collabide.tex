@@ -16,10 +16,29 @@ Concurrent development means that all the actions a developer does in the IDE ar
 \subsection{Contribution Management}
 In a project, each developer is assigned a unique color which is used to highlight the contributions of code said developer has done. Additionally, each developer has a contribution state that determines if his contributions are visible or not to the rest of the team. In figure [] we show how this feature is integrated into the IDE. With contribution management, any developer can easily identify the contributions of each team member and toggle their visibility as needed. From a product variant point of view, this feature eases the process of building new variants from existing fragments of code, effectively reducing the overhead derived from executing initial configuration processes.
 
+%%
 \subsection{Version Management}
-There can be many product versions at a time in a project. Developers have the option of easily creating and updating product versions which are snapshots of the current contents of the code editor. In a project there is always one main version, and all the other versions are derived from his one, this could be seen as the branching system that is used in git. Thanks to the concurrent development feature, all the team members obtain a new version the moment it is created. The developers can also switch between versions and view immediately the contents of the editor at the time the version was created or edited. In figure [] we show how product versioning is managed in the IDE. Proccess related to version management must be carried out multiple times in the lifespan of a project. While these processes individually don’t need much time to execute, in the long-term, they can have a lasting impact on productivity. As the time required for managing different product versions is reduced with this feature, this long-term impact can be reduced effectively.
+There can be many product versions at a time in a project. Developers have the option of easily creating and updating product versions which are snapshots of the current contents of the code editor. In a project there is always one main version, and all the other versions are derived from his one, this could be seen as the branching system that is used in git. Thanks to the concurrent development feature, all the team members obtain a new version the moment it is created. The developers can also switch between versions and view immediately the contents of the editor at the time the version was created or edited. In \fref{fig:} we show how product versioning is managed in the IDE. Process related to version management must be carried out multiple times in the lifespan of a project. While these processes individually don’t need much time to execute, in the long-term, they can have a lasting impact on productivity. As the time required for managing different product versions is reduced with this feature, this long-term impact can be reduced effectively.
 
+%%
 \subsection{Implementation}
+\label{sec:implementation}
+
+The implementation of CollabIDE reconciles \ac{COP} with developing software systems integrated as part of a web platform.
+
+%%%%
+\subsubsection{\ac{COP} in a Nutshell}
+The base of CollabIDE is \acf{COP}. \ac{COP} is a programming paradigm designed for the dynamic adaptation of software systems based on context information gathered from the system's surrounding execution environment~\cite{salvaneschi+12survey}. \ac{COP} consists of three main abstractions: \emph{Contexts}, \emph{Behavioral adaptations}, \emph{Adaptation activation}.
+
+\paragraph{Contexts} represent semantically meaningful situations gathered from the systems surrounding environment~\cite{dey01}. Contexts are defined as first-class entities .
+
+\paragraph{Behavioral adaptations,} are fine-grained behavior definitions associated to one or several context entities. Behavioral adaptations dictate the observable behavior of a system under particular situation sensed from the environment. The combination of behavioral adaptations and contexts constitute what we call and \emph{adaptation}.
+
+\paragraph{Adaptations activation,} and their different combinations, are visible in the system through the activation and deactivation of context entities, effectively incorporating and withdrawing the behavioral adaptations associated with such contexts.
+
+
+%%%%
+\subsubsection{CollabIDE Internals}
 To implement the features described previously, various contexts must be considered. Each developer 
 and each product version represents a different context. To achieve this context management, we used 
 the \ac{COP} paradigm~\cite{salvaneschi+12survey}, specifically the Context Traits implementation. 

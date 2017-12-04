@@ -15,7 +15,7 @@ The main characteristics of using \acp{VCS} in software development processes ar
 These characteristics, enable to manage progress, backups, and variations of a software system from the development and maintenance activities of a software project~\cite{spinellis05}.
 
 Taking advantage of \acp{VCS},  it is possible for software developers to embrace a \ac{DSD} model, in which development teams are distributed in both, location and time. This model is beneficial in reducing costs, increasing productivity, and finding human talent in different locations; all of which are aimed to increase the productivity of a development team. 
-Similar to the \ac{DSD} model, a \ac{SPL} model can be supported by a \ac{VCS}. Different variants of a product can be maintained independently, as part of a single development project, to provide personalized alternatives to different costumers. This reduces development costs, due to resource reutilization, and a faster go to market cycle~\cite{klaus10}.  
+Similar to the \ac{DSD} model, a \ac{SPL} model can be supported by a \ac{VCS}. Different variants of a product can be maintained independently, as part of a single development project, to provide personalized alternatives to different costumers. This reduces development costs, due to resource reutilization, and a faster go to market cycle~\cite{pohl05}.  
 
 %why
 \acp{VCS} offer mechanisms like commit, push, and merge to manage versions and variants in a software project. With these mechanisms it is possible to solve synchronization and coordination problems as they arise. 
@@ -27,11 +27,11 @@ Moreover, frequent interaction with the \ac{VCS} increases the development time 
 %what
 To address the aforementioned problems when using \acp{VCS} to track program versions or manage \acp{SPL}, we propose an integrated development environment, CollabIDE, focused on the distributed  collaboration in software product development. CollabIDE integrates an automated \ac{VCS}, and a lightweight \ac{SPL} model for the generation of multiple variants from a single code base. 
 %How
-CollabIDE is built on top of the dynamic behavior adaptation model proposed by \ac{COP}~\cite{salvaneschi13taas}. To use this model, we define versions as context objects (based on available information \eg the logged in user).
+CollabIDE is built on top of the dynamic behavior adaptation model proposed by \ac{COP}~\cite{salvaneschi+12survey}. To use this model, we define versions as context objects (based on available information \eg the logged in user).
 Product variants are managed based on the defined versions, where a variant is generated using a subset of all defined versions.
 
 To validate CollabIDE, we conducted a small empirical study with users 
-working in distributed teams. Each team had to develop different programming exercises following a sequence of commands to share code with their development team, and release different product variants. For each team we gathered information about the time to complete the tasks and a small survey about the tool usage. This information shows an improvement in the development times of about XXXX and a general acceptance towards the tool.
+working in distributed teams (\fref{sec:validation}). Each team had to develop different programming exercises following a sequence of commands to share code with their development team, and release different product variants. For each team we gathered information about the time to complete the tasks and a small survey about the tool usage. This information shows an improvement in the development times of about XXXX and a general acceptance towards the tool.
  
 
 
