@@ -239,6 +239,42 @@ morestring=[b]"
       \fbox{\footnotesize\textcolor{author}{\textsc{#2}}}
       \textcolor{#1}{\textsl{#3}}}{}}
 
+%% Space-squeezing stuff
+
+\let\origSubsubsection\subsubsection
+\renewcommand*{\subsubsection}[1]%
+  {\vspace{-1em}\origSubsubsection{#1}}
+
+\makeatletter
+
+% Squeeze figures
+\let\orig@figure\figure
+\renewcommand*{\figure}[1][]{\orig@figure[#1]\vspace{-1em}} % before
+\let\orig@endfigure\endfigure
+\renewcommand*{\endfigure}{\vspace{-1ex}\orig@endfigure} % after
+
+% Squeeze tables
+\let\orig@table\table
+\renewcommand*{\table}{\orig@table\vspace{-1em}} % before
+\let\orig@endtable\endtable
+\renewcommand*{\endtable}{\vspace{-1ex}\orig@endtable} % after
+
+% Squeeze captions
+\usepackage{caption}
+\captionsetup[figure]{aboveskip=1ex,belowskip=-1em}
+\captionsetup[table]{aboveskip=1ex,belowskip=-1em}
+
+% Squeeze section titles
+%\let\orig@section\section
+%\renewcommand*{\section}[1]{\orig@section{#1}\vspace{-.2ex}}
+
+% Squeeze subsections
+%\let\orig@subsection\subsection
+%\renewcommand*{\subsection}[1]{\orig@subsection{#1}\vspace{-.2ex}}
+
+\makeatother
+
+
 \input{acronyms}
 
 
