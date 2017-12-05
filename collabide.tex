@@ -5,49 +5,63 @@
 \section{CollabIDE}
 \label{sec:collab-ide}
 
-CollabIDE is a cloud-based integrated development environment prsenting collaboration faciliries distributed development teams 
-working on a software project. CollabIDE has three key features which help to reduce the overhead of managing versions or product variants. These features are:
+CollabIDE is a cloud-based integrated development environment presenting collaboration facilities 
+distributed development teams working on a software project. CollabIDE has three key features which 
+help to reduce the overhead of managing versions or product variants. These features are:
 \begin{enumerate*}[label=(\arabic*)] 
 \item version management, 
-\item concurrent development, and 
-\item product variant management.
+\item product variant management, and 
+\item concurrent development.
 \end{enumerate*}
 
 %%
 \subsection{Version Management}
-Software productos evolve over time, specially during their development. Rather than 
-There can be many product versions at a time in a project. Developers have the option of easily creating and updating product versions which are snapshots of the current contents of the code editor. In a project there is always one main version, and all the other versions are derived from his one, this could be seen as the branching system that is used in git. Thanks to the concurrent development feature, all the team members obtain a new version the moment it is created. The developers can also switch between versions and view immediately the contents of the editor at the time the version was created or edited. In \fref{fig:} we show how product versioning is managed in the IDE. Process related to version management must be carried out multiple times in the lifespan of a project. While these processes individually don’t need much time to execute, in the long-term, they can have a lasting impact on productivity. As the time required for managing different product versions is reduced with this feature, this long-term impact can be reduced effectively.
+Software products evolve over time~\cite{lehman02}. Rather than releasing a fully working product at once, developers implement products incrementally. Each product increment focuses on a single feature or part of the functionality at a time. Each of these features marks a new \emph{version} of the system, moving forward linearly in time. Defining and synchronizing between these pieces of functionality must be carried out multiple times in a project's lifespan. In the long-term, this process has a lasting impact in the productivity.
 
-\begin{graphics}[htbp]
+CollabIDE takes the association between a feature's development, and an associated version to that 
+new feature to an extreme. In CollabIDE, every code modification (regardless of its size) is marked as 
+a new product increment.
+Furthermore, instead of asking developers to continuously create and manage product versions, 
+CollabIDE automatically generates versions for each code increment. These increments are identified 
+by a set of variables relevant to the project development and knowhow transfer. For example of all the  
+available information from these versions take into account the name of the user creating the code 
+increment, or the time of the day.
+\fref{fig:versions} shows the way product versions are managed in the CollabIDE. 
+
+Thanks to the concurrent development feature, all the team members obtain a new version the moment it is created. The developers can also switch between versions and view immediately the contents of the editor at the time the version was created or edited. 
+As the time required for managing different product versions is reduced with this feature, this long-term impact can be reduced effectively.
+
+\begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.7\textwidth]{figs/}
-  \caption{}
-  \label{fig:}
-\end{graphics}
-
-%%
-\subsection{Concurrent Development}
-Using CollabIDE, developes afe able to work concurrently om the same code base offering immediate feedback about the contributions of other developers.
-Concurrent development means that all the actions a developer does in the IDE are synchronized. This lets all developers view in real time what changes are being made by other team members in the code editor or the control panel. In \frerf{fig:} we show how the IDE highlights the code belonging to a certain team member. This feature eliminates the need of constantly having to obtain the latest changes made by other team members. Additionally, conflicts become nonexistent as there will always be only one version of the content being seen by the developers at a given time. The awareness of what each team member has done increases too with this feature, boosting coordination and allowing developers to know in little time what progress has been made in a project since the last time they worked on it. 
-
-\begin{graphics}[htbp]
-  \centering
-  \includegraphics[width=0.7\textwidth]{figs/}
-  \caption{}
-  \label{fig:}
-\end{graphics}
+  \includegraphics[width=0.7\textwidth]{img/fig4-collabIDEVersionManagement}
+  \caption{Version visualization in CollabIDE}
+  \label{fig:versions}
+\end{figure}
 
 
 %%
 \subsection{Product Variant Management}
 In a project, each developer is assigned a unique color which is used to highlight the contributions of code said developer has done. Additionally, each developer has a contribution state that determines if his contributions are visible or not to the rest of the team. In \fref{fig:} we show how this feature is integrated into the IDE. With contribution management, any developer can easily identify the contributions of each team member and toggle their visibility as needed. From a product variant point of view, this feature eases the process of building new variants from existing fragments of code, effectively reducing the overhead derived from executing initial configuration processes.
 
-\begin{graphics}[htbp]
+\begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.7\textwidth]{figs/}
+  \includegraphics[width=0.7\textwidth]{img/fig3-collabIDEContributionManagement}
   \caption{}
   \label{fig:}
-\end{graphics}
+\end{figure}
+
+
+%%
+\subsection{Concurrent Development}
+Using CollabIDE, developers are able to work concurrently on the same code base offering immediate feedback about the contributions of other developers.
+Concurrent development means that all the actions a developer does in the IDE are synchronized. This lets all developers view in real time what changes are being made by other team members in the code editor or the control panel. In \fref{fig:} we show how the IDE highlights the code belonging to a certain team member. This feature eliminates the need of constantly having to obtain the latest changes made by other team members. Additionally, conflicts become nonexistent as there will always be only one version of the content being seen by the developers at a given time. The awareness of what each team member has done increases too with this feature, boosting coordination and allowing developers to know in little time what progress has been made in a project since the last time they worked on it. 
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{img/fig2-collabIDEConcurrentProgramming}
+  \caption{}
+  \label{fig:}
+\end{figure}
 
 
 %%
@@ -71,7 +85,7 @@ The base of CollabIDE is \acf{COP}. \ac{COP} is a programming paradigm designed 
 \subsubsection{CollabIDE Internals}
 To implement the features described previously, various contexts must be considered. Each developer 
 and each product version represents a different context. To achieve this context management, we used 
-the \ac{COP} paradigm~\cite{salvaneschi+12survey}, specifically the Context Traits implementation. 
+the \ac{COP}, specifically using the Context Traits implementation~\cite{gonzalez13}. 
 Context Traits provides the necessary elements to define a specific behavior during runtime for each 
 context. CollabIDE features were build making use of these elements, which helped define the 
 contribution state of a developer among other elements.
