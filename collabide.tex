@@ -16,6 +16,7 @@ help to reduce the overhead of managing versions or product variants. These feat
 
 %%
 \subsection{Version Management}
+\label{sec:vcs}
 Software products evolve over time~\cite{lehman02}. Rather than releasing a fully working product at 
 once, developers implement products incrementally. Each product increment focuses on a single 
 feature or part of the functionality at a time. Each of these features marks a new \emph{version} of the 
@@ -41,7 +42,7 @@ state of the code at the moment the version was created or edited.
 \begin{figure}[tbp]
   \centering
   \includegraphics[width=0.7\textwidth]{img/fig4-collabIDEVersionManagement}
-  \caption{Version visualization in CollabIDE}
+  \caption{Version visualization and management in CollabIDE}
   \label{fig:versions}
 \end{figure}
 
@@ -51,7 +52,28 @@ interactions.
 
 %%
 \subsection{Product Variant Management}
-In a project, each developer is assigned a unique color which is used to highlight the contributions of code said developer has done. Additionally, each developer has a contribution state that determines if his contributions are visible or not to the rest of the team. In \fref{fig:contribution} we show how this feature is integrated into the IDE. With contribution management, any developer can easily identify the contributions of each team member and toggle their visibility as needed. From a product variant point of view, this feature eases the process of building new variants from existing fragments of code, effectively reducing the overhead derived from executing initial configuration processes.
+\label{sec:product-variant}
+In \ac{SPL} development product variants are managed through variability models, describing the 
+different components of the product, and the different options for each of these 
+components~\cite{pohl05}. A product variant consists of the composition of a base product with 
+different features, usually specialized for each costumer or purpose. This process requires developers 
+to define beforehand both, the base product, and the variations points (\ie those features that can be 
+interchanged with other features). This process is time consuming for the project setup, and fixed in 
+the points where variations may take place.
+
+CollabIDE takes advantage of its \ac{VCS} to enable a more flexible product variation model. Product 
+variants are defined by the composition of the different versions available in the system. These 
+versions may be chosen based on the time of their creation (as explained in the previous section), or 
+taking into account the contributions made by specific developers. The composition takes place 
+behind the scene using \ac{COP} facilities for dynamic software composition (\cf 
+\fref{sec:implementation}).
+
+\fref{fig:contribution} shows the panel in the CollabIDE interface to select the different variants, in this 
+case according to developers' contributions. Selecting one of the contributions renders the associated 
+code as part of the interface, and composes the variant with the currently working code. From a 
+product variant point of view, this feature eases the process of building new variants from existing 
+fragments of code, effectively reducing the overhead derived from executing initial configuration 
+processes.
 
 \begin{figure}[htbp]
   \centering
@@ -66,10 +88,12 @@ In a project, each developer is assigned a unique color which is used to highlig
 Using CollabIDE, developers are able to work concurrently on the same code base offering immediate feedback about the contributions of other developers.
 Concurrent development means that all the actions a developer does in the IDE are synchronized. This lets all developers view in real time what changes are being made by other team members in the code editor or the control panel. In \fref{fig:layers} we show how the IDE highlights the code belonging to a certain team member. This feature eliminates the need of constantly having to obtain the latest changes made by other team members. Additionally, conflicts become nonexistent as there will always be only one version of the content being seen by the developers at a given time. The awareness of what each team member has done increases too with this feature, boosting coordination and allowing developers to know in little time what progress has been made in a project since the last time they worked on it. 
 
+In a project, each developer is assigned a unique color which is used to highlight the contributions of code said developer has done. 
+
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.7\textwidth]{img/fig2-collabIDEConcurrentProgramming}
-  \caption{First-hand view of contributions}
+  \caption{First-hand view of developers' contributions}
   \label{fig:layers}
 \end{figure}
 
