@@ -36,8 +36,9 @@ managed in the CollabIDE.
 
 A differentiating feature of CollabIDE is that versions are live. That is, every time a new version is 
 created by any of the developers, this is made available to all other developers immediately. 
-As a consequence, switching between versions, developers have an immediate view of the complete 
-state of the code at the moment the version was created or edited. 
+As a consequence, versioning conflicts become nonexistent as all developers see a sing (and most 
+updated) version of the code at all times. Moreover, switching between versions, developers have an 
+immediate view of the complete state of the code at the moment the version was created or edited. 
 
 \begin{figure}[tbp]
   \centering
@@ -85,10 +86,16 @@ processes.
 
 %%
 \subsection{Concurrent Development}
-Using CollabIDE, developers are able to work concurrently on the same code base offering immediate feedback about the contributions of other developers.
-Concurrent development means that all the actions a developer does in the IDE are synchronized. This lets all developers view in real time what changes are being made by other team members in the code editor or the control panel. In \fref{fig:layers} we show how the IDE highlights the code belonging to a certain team member. This feature eliminates the need of constantly having to obtain the latest changes made by other team members. Additionally, conflicts become nonexistent as there will always be only one version of the content being seen by the developers at a given time. The awareness of what each team member has done increases too with this feature, boosting coordination and allowing developers to know in little time what progress has been made in a project since the last time they worked on it. 
 
-In a project, each developer is assigned a unique color which is used to highlight the contributions of code said developer has done. 
+CollabIDE offers a feature for concurrent development. Taking advantage of the \ac{VCS}, developers 
+are able to work concurrently on the same code base, having immediate feedback about the 
+contributions of other developers.
+Developers' code is differentiated by highlighting, in a unique color, the code contributed by each 
+developer, as shown in \fref{fig:layers}. First, colored code, offers a first-hand view about the 
+contributions of each team member, increasing awareness  about code owners, and coordination to 
+develop or fix code increments. Second, code highlighting is used as a means to identify feature a 
+developer has worked on, enabling the composition of specific product variants by selecting the work 
+of developers associated to specific features. 
 
 \begin{figure}[htbp]
   \centering
