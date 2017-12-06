@@ -126,18 +126,22 @@ as part of a cloud-based service.
 %%%%
 \subsubsection{CollabIDE Internals}
 To implement the features described in \fref{sec:collabide}, we create a one to one association between adaptations and versions.
-Versions consist of the code introduced by developers and the conditions in which
-various contexts must be considered. Each developer 
-and each product version represents a different context. 
+Versions consist of the code introduced by developers and the conditions of the surrounding environment in which this take place. 
 
-To achieve this context management, we used 
-the \ac{COP}, specifically using Context Traits~\cite{gonzalez13}. 
-Context Traits provides the necessary elements to define a specific behavior during runtime for each 
-context. CollabIDE features were build making use of these elements, which helped define the 
-contribution state of a developer among other elements.
-For the code editor of CollabIDE we used Firepad\footnote{\url{https://firepad.io/\#1}} which is an open 
-source collaborative text editor. Firepad stores all the changes made in the editor in Firebase’s real 
-time non relational database. Additional to the data Firepad stores, we store user and product versions 
-data in Firebase.
+As a cloud-based platform CollabIDE is implemented using ECMAScript, using node\footnote{\url{}} for the backend, and Firepad,\footnote{\url{https://firepad.io/\#1}} an open source collaborative text editor, for the frontend.
+For the context management we use Context Traits~\cite{gonzalez13}. 
+
+As mentioned before, versions and product features are defined based on the time in which a code increment is defined, and the user defining such increment, respectively. We use these two situations as our contexts.
+Whenever users log to the system a context is automatically defined by the system using the login timestamp as its identifier as follows
+\begin{ctxtraits}
+var 070420171425 = new cop.Context{name: "070420171425"}
+\end{ctxtraits}
+Having defined a context, all code increments are stored (Lines \ref{ln:ba-init}-\ref{ln:ba-end}) as a behavioral adaptation associated to such context (\fref{ln:association}) as shown next
+\begin{ctxtraits}
+
+\end{ctxtraits}
+
+Additionally, the system defines a context per user, associating all code increments to this context too. The purpose of this additional association is twofold. On the one hand, we use it to select product variants per user. On the other hand, it is used to adapt the behavior of the text rendering in Firebase, in order to display the colored layer indicating the contributions for each developer.
+
 
 \endinput
