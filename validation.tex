@@ -22,7 +22,7 @@ in both Distributed Software Development and Software Product Lines.
 
 For each research question, we designed one experiment. In each experiment, we asked 
 a group of developers to solve programming tasks using either CollabIDE or a 
-conventional IDE following a set of instructions that aim to emulate the workflow that is carried out in each development model. The experiments differed in team sizes, the tasks that needed to be completed and the workflow each set of participants had to follow. Two metrics were taken in each experiment, first, the percentage of completion of the total tasks assigned and second, the amount of time in minutes spent performing actions related to version control.
+conventional IDE following a set of instructions that aimed to emulate the workflow that is carried out in each development model. The experiments differed in team sizes, the tasks that needed to be completed and the workflow each set of participants had to follow. Two metrics were taken in each experiment, first, the percentage of completion of the total tasks assigned and second, the amount of time in minutes spent performing actions related to version control.
 
 %%%%
 \subsubsection{Experiment 1: Software development in a distributed set-up}
@@ -35,10 +35,9 @@ For the experiment, groups of developers had to use JavaScript to accomplish the
 In this second experiment the objective was to also quantify the overhead reduction that can be achieved with CollabIDE within a product line development context where various variants of a product must be maintained.
 For the experiment, individual developers had to program in Java or JavaScript depending on the IDE they used to complete their tasks. Additionally, they had to use version control to manage the different product variants that were involved in the programming tasks.
 
-
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.7\textwidth]{img/fig1-collabIDEGeneral}
+  \includegraphics[width=0.7\textwidth]{img/collabIDEGeneral}
   \caption{CollabIDE tool}
   \label{fig:collabide}
 \end{figure}
@@ -61,9 +60,52 @@ a higher completion percentage than those who used the other IDEs. The developer
 CollabIDE also spent significantly less time doing actions related to version control than the 
 developers that used other IDEs.
 
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{img/resultsTableCollaborative}
+  \caption{Distributed Development experiment results}
+  \label{fig:collabide}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{img/completionCollaborative}
+  \caption{Completion percentage graph for Distributed Development}
+  \label{fig:collabide}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{img/versionControlCollaborative}
+  \caption{Time spent in version control graph for Distributed Development}
+  \label{fig:collabide}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{img/resultsTableProductLine}
+  \caption{Product Line Development experiment results}
+  \label{fig:collabide}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{img/completionProductLine}
+  \caption{Completion percentage graph for Product Line Development}
+  \label{fig:collabide}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{img/versionControlProductLine}
+  \caption{Time spent in version control graph for Product Line Development}
+  \label{fig:collabide}
+\end{figure}
+
 %%%%
-\subsection{Threads to Validity}
-En esta sección discutimos algunos aspectos del experimento que pueden poner en peligro la validez de los resultados. El primero es que la muestra de participantes es muy baja, en el primer experimento tan solo hubo un grupo de control y dos grupos con CollabIDE, del mismo modo en el segundo experimento solo hubo 2 participantes en cada IDE. Cuando las muestras de participantes son bajas, es más fácil caer en el sesgo [11]. El segundo aspecto es que cada experimento duro una hora y treinta minutos, por este motivo se incluyeron pasos específicos en el flujo de trabajo como el de obtener una versión actualizada del proyecto cada 15 minutos, la se hace en intervalos de tiempo más grandes en la vida real. Esta simulación del flujo de trabajo real en ambos experimentos puede también sesgar los resultados en favor de uno de los IDEs.  
+\subsection{Threats to Validity}
+In this section we discuss some aspects of the experiments that can put at risk the validity of the results discussed previously. The first one is that the subject sample size is small, having only one control group in the first experiment and two in the second. Small sample seizes can easily lead to bias [REF], and, in this case, the bias would be towards CollabIDE performing better. Another aspect that can be considered a threat is the low duration of each experiment. In real life contexts, software projects where version control systems are employed usually take months if not years to complete. Additionally, the time intervals between each version control operation are longer, whereas in the experiment they needed to be performed each fifteen minutes. These lower times could also lead to bias towards one of the IDEs, as the development workflow wasn’t completely accurate to one carried out in a real life context. 
 
 
 \endinput
