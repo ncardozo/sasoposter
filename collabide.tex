@@ -114,19 +114,23 @@ as part of a cloud-based service.
 
 %%%%
 \subsubsection{\ac{COP} in a Nutshell}
-\ac{COP} is a programming paradigm designed for the dynamic adaptation of software systems based on context information gathered from the system's surrounding execution environment~\cite{salvaneschi+12survey}. \ac{COP} consists of three main abstractions: \emph{Contexts}, \emph{Behavioral adaptations}, \emph{Adaptation activation}.
+\ac{COP} is a programming paradigm designed for the dynamic adaptation of software systems based on context information gathered from the system's surrounding execution environment~\cite{salvaneschi+12survey}. \ac{COP} consists of three main abstractions: \emph{Contexts}, \emph{Behavioral adaptations}, \emph{Context activations}.
 
-\paragraph{Contexts} represent semantically meaningful situations gathered from the systems surrounding environment~\cite{dey01}. Contexts are defined as first-class entities .
+\paragraph{Contexts} represent semantically meaningful situations gathered from the systems surrounding environment~\cite{dey01}. Contexts are defined as first-class entities of the system that are manipulated in reaction to external stimulus (\eg changes in sensed information,actions executed by users). A context can be in an active state, stating that the situation it represents is taking place in the surrounding environment. Otherwise, the context is said to be inactive.
 
-\paragraph{Behavioral adaptations,} are fine-grained behavior definitions associated to one or several context entities. Behavioral adaptations dictate the observable behavior of a system under particular situation sensed from the environment. The combination of behavioral adaptations and contexts constitute what we call and \emph{adaptation}.
+\paragraph{Behavioral adaptations} are fine-grained behavior definitions associated to one or several context entities. Behavioral adaptations dictate the observable behavior of a system under a particular situation sensed from the surrounding environment. The combination of behavioral adaptations and contexts constitute what we call and \emph{adaptation}.
 
-\paragraph{Adaptations activation,} and their different combinations, are visible in the system through the activation and deactivation of context entities, effectively incorporating and withdrawing the behavioral adaptations associated with such contexts.
+\paragraph{Context activations} correspond to the systems' reaction to the surrounding environment. Whenever a context is sensed to be active (the information associated with the contexts satisfies a given activation condition), an activation message is sent to the system. Upon the message's evaluation, the system is dynamically recomposed taking into account all behavioral adaptations associated with the context. This process may overwrite previous behaviour definitions already composed in the system. Whenever the acivation condition of a contet afe unsatisfied, a deactivation message is sent, effectively withdrawing the behavioral adaptations associated with the context. That is, the system is dynamicaly recomposed, not taking into account the context's behavioral adaptations.  Note that, different combinations of contexts may compose the system at a time.
 
 
 %%%%
 \subsubsection{CollabIDE Internals}
-To implement the features described previously, various contexts must be considered. Each developer 
-and each product version represents a different context. To achieve this context management, we used 
+To implement the features described in \fref{sec:collabide}, we create a one to one association between adaptations and versions.
+Versions consist of the code introduced by developers and the conditions in which
+various contexts must be considered. Each developer 
+and each product version represents a different context. 
+
+To achieve this context management, we used 
 the \ac{COP}, specifically using Context Traits~\cite{gonzalez13}. 
 Context Traits provides the necessary elements to define a specific behavior during runtime for each 
 context. CollabIDE features were build making use of these elements, which helped define the 
