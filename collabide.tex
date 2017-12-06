@@ -114,34 +114,66 @@ as part of a cloud-based service.
 
 %%%%
 \subsubsection{\ac{COP} in a Nutshell}
-\ac{COP} is a programming paradigm designed for the dynamic adaptation of software systems based on context information gathered from the system's surrounding execution environment~\cite{salvaneschi+12survey}. \ac{COP} consists of three main abstractions: \emph{Contexts}, \emph{Behavioral adaptations}, \emph{Context activations}.
+\ac{COP} is a programming paradigm designed for the dynamic adaptation of software systems based 
+on context information gathered from the system's surrounding execution 
+environment~\cite{salvaneschi+12survey}. \ac{COP} consists of three main abstractions: 
+\emph{Contexts}, \emph{Behavioral adaptations}, \emph{Context activations}.
 
-\paragraph{Contexts} represent semantically meaningful situations gathered from the systems surrounding environment~\cite{dey01}. Contexts are defined as first-class entities of the system that are manipulated in reaction to external stimulus (\eg changes in sensed information,actions executed by users). A context can be in an active state, stating that the situation it represents is taking place in the surrounding environment. Otherwise, the context is said to be inactive.
+\paragraph{Contexts} represent semantically meaningful situations gathered from the systems 
+surrounding environment~\cite{dey01}. Contexts are defined as first-class entities of the system that 
+are manipulated in reaction to external stimulus (\eg changes in sensed information, actions executed 
+by users). A context can be in an active state, stating that the situation it represents is taking place in 
+the surrounding environment. Otherwise, the context is said to be inactive.
 
-\paragraph{Behavioral adaptations} are fine-grained behavior definitions associated to one or several context entities. Behavioral adaptations dictate the observable behavior of a system under a particular situation sensed from the surrounding environment. The combination of behavioral adaptations and contexts constitute what we call and \emph{adaptation}.
+\paragraph{Behavioral adaptations} are fine-grained behavior definitions associated to one or several 
+context entities. Behavioral adaptations dictate the observable behavior of a system under a particular 
+situation sensed from the surrounding environment. The combination of behavioral adaptations and 
+contexts constitute what we call and \emph{adaptation}.
 
-\paragraph{Context activations} correspond to the systems' reaction to the surrounding environment. Whenever a context is sensed to be active (the information associated with the contexts satisfies a given activation condition), an activation message is sent to the system. Upon the message's evaluation, the system is dynamically recomposed taking into account all behavioral adaptations associated with the context. This process may overwrite previous behaviour definitions already composed in the system. Whenever the acivation condition of a contet afe unsatisfied, a deactivation message is sent, effectively withdrawing the behavioral adaptations associated with the context. That is, the system is dynamicaly recomposed, not taking into account the context's behavioral adaptations.  Note that, different combinations of contexts may compose the system at a time.
+\paragraph{Context activations} correspond to the systems' reaction to the surrounding environment. 
+Whenever a context is sensed to be active (the information associated with the contexts satisfies a 
+given activation condition), an activation message is sent to the system. Upon the message's 
+evaluation, the system is dynamically recomposed taking into account all behavioral adaptations 
+associated with the context. This process may overwrite previous behavior definitions already 
+composed in the system. Whenever the activation conditions of a context are unsatisfied, a 
+deactivation message is sent, effectively withdrawing the behavioral adaptations associated with the 
+context. That is, the system is dynamically recomposed, not taking into account the context's 
+behavioral adaptations.  Note that, different combinations of contexts may compose the system at a 
+time.
 
 
 %%%%
 \subsubsection{CollabIDE Internals}
-To implement the features described in \fref{sec:collabide}, we create a one to one association between adaptations and versions.
-Versions consist of the code introduced by developers and the conditions of the surrounding environment in which this take place. 
+To implement the features described in \fref{sec:collabide}, we create a one to one association 
+between adaptations and versions~\cite{}.
+Versions consist of the code introduced by developers and the conditions of the surrounding 
+environment in which this take place. 
 
-As a cloud-based platform CollabIDE is implemented using ECMAScript, using node\footnote{\url{}} for the backend, and Firepad,\footnote{\url{https://firepad.io/\#1}} an open source collaborative text editor, for the frontend.
+As a cloud-based platform CollabIDE is implemented using ECMAScript, using 
+node\footnote{\url{http://nodejs.org/}} for the backend, and Firepad,\footnote{\url{https://firepad.io/\#1}} 
+an open source collaborative text editor, for the frontend.
 For the context management we use Context Traits~\cite{gonzalez13}. 
 
-As mentioned before, versions and product features are defined based on the time in which a code increment is defined, and the user defining such increment, respectively. We use these two situations as our contexts.
-Whenever users log to the system a context is automatically defined by the system using the login timestamp as its identifier as follows
+As mentioned before, versions and product variants are defined based on the time in which a code 
+increment is defined, and the user defining such increment, respectively. We use these two situations 
+as our contexts.
+Whenever users log to the system a context is automatically defined by the system using the login 
+timestamp as its identifier as follows
 \begin{ctxtraits}
-var 070420171425 = new cop.Context{name: "070420171425"}
+ var 190520171428 = new cop.Context{
+   name: "190520171428"
+ }
 \end{ctxtraits}
-Having defined a context, all code increments are stored (Lines \ref{ln:ba-init}-\ref{ln:ba-end}) as a behavioral adaptation associated to such context (\fref{ln:association}) as shown next
+Having defined a context, all code increments are stored (Lines \ref{ln:ba-init}-\ref{ln:ba-end}) as a 
+behavioral adaptation associated to such context (\fref{ln:association}) as shown next
 \begin{ctxtraits}
 
 \end{ctxtraits}
 
-Additionally, the system defines a context per user, associating all code increments to this context too. The purpose of this additional association is twofold. On the one hand, we use it to select product variants per user. On the other hand, it is used to adapt the behavior of the text rendering in Firebase, in order to display the colored layer indicating the contributions for each developer.
+Additionally, the system defines a context per user, associating all code increments to this context too. 
+The purpose of this additional association is twofold. On the one hand, we use it to select product 
+variants per user. On the other hand, it is used to adapt the behavior of the text rendering in Firebase, 
+in order to display the colored layer indicating the contributions for each developer.
 
 
 \endinput
