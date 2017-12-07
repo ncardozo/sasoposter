@@ -55,52 +55,56 @@ In the Software Product Lines experiment, a different group of four developers w
 %%%%
 \subsection{Results}
 
-At the end of the experiment, the metrics showed that the developers which used CollabIDE obtained 
-a higher completion percentage than those who used the other IDEs. The developers who used 
-CollabIDE also spent significantly less time doing actions related to version control than the 
-developers that used other IDEs.
+In this section we analyze the results of each experiment, specifically how each measure taken helps us tell if there was an increase in productivity.
 
+\subsubsection{Experiment 1 Results}
+
+First, in \fref{fig:resultsCollaborative} we show the results for each group and the background of each participant. Both groups that used CollabIDE achieved a higher completion rate (on average of 11 percent more tasks completed) than the control group (\fref{fig:completionCollaborative}). On top of that, they also spent significantly less time performing actions related to version control (an average 33.2 less minutes) (\fref{fig:versionControlCollaborative}). The higher completion rate achieved by the groups that used CollabIDE can be attributed to the fact that the developers could spend more time coding as they didn’t have to invest much time in version control. It is clear why there is such a significant difference in time for both IDEs results. While the control group had to follow the common git workflow of committing, pushing, pulling changes and solving the possible conflicts that could arise, the CollabIDE groups could avoid this process altogether as CollabIDE’s features ensured that both team members always had each other latest changes without conflicts. Thus, the only action they needed to perform was creating a new version using the side menu of CollabIDE.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.7\textwidth]{img/resultsTableCollaborative}
+  \includegraphics[width=1\textwidth]{img/resultsTableCollaborative}
   \caption{Distributed Development experiment results}
-  \label{fig:collabide}
+  \label{fig:resultsTableCollaborative}
 \end{figure}
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.7\textwidth]{img/completionCollaborative}
+  \includegraphics[width=0.8\textwidth]{img/completionCollaborative}
   \caption{Completion percentage graph for Distributed Development}
-  \label{fig:collabide}
+  \label{fig:completionCollaborative}
 \end{figure}
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.7\textwidth]{img/versionControlCollaborative}
+  \includegraphics[width=0.8\textwidth]{img/versionControlCollaborative}
   \caption{Time spent in version control graph for Distributed Development}
-  \label{fig:collabide}
+  \label{fig:{img/versionControlCollaborative}}
 \end{figure}
+
+\subsubsection{Experiment 2 Results}
+
+In \fref{fig:resultsTableProductLine} we show the results and background for each developer in the product line development experiment. Like the first experiment, the developers that employed CollabIDE obtained better results, but in this case, the difference between using CollabIDE versus using the conventional IDE was not very significative. With CollabIDE, the developers achieved on average 4 percent more tasks (\fref{fig:completionProductLine}) and spent 2.83 less minutes in version control than the developers using Eclipse (\fref{fig:versionControlProductLine}).
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.7\textwidth]{img/resultsTableProductLine}
+  \includegraphics[width=1\textwidth]{img/resultsTableProductLine}
   \caption{Product Line Development experiment results}
-  \label{fig:collabide}
+  \label{fig:resultsTableProductLine}
 \end{figure}
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.7\textwidth]{img/completionProductLine}
+  \includegraphics[width=0.8\textwidth]{img/completionProductLine}
   \caption{Completion percentage graph for Product Line Development}
-  \label{fig:collabide}
+  \label{fig:completionProductLine}
 \end{figure}
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.7\textwidth]{img/versionControlProductLine}
+  \includegraphics[width=0.8\textwidth]{img/versionControlProductLine}
   \caption{Time spent in version control graph for Product Line Development}
-  \label{fig:collabide}
+  \label{fig:versionControlProductLine}
 \end{figure}
 
 %%%%
