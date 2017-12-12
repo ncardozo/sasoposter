@@ -6,7 +6,7 @@
 \label{sec:collab-ide}
 
 CollabIDE is a cloud-based integrated development environment presenting collaboration facilities 
-distributed development teams working on a software project. CollabIDE has three key features which 
+for distributed development teams working on a software project. CollabIDE has three key features which 
 help to reduce the overhead of managing versions or product variants. These features are:
 \begin{enumerate*}[label=(\arabic*)] 
 \item version management, 
@@ -32,12 +32,12 @@ identified by a set of variables relevant to the project development. For exampl
 to generate versions may include the developer's name, or the time of the day. Additionally, if 
 developers want to create their own versions, it is posible to do so simply by giving them a name in 
 the versions pane of the interface. \fref{fig:versions} shows the way product versions are 
-managed in the CollabIDE. 
+managed in CollabIDE. 
 
 A differentiating feature of CollabIDE is that versions are live. That is, every time a new version is 
-created by any of the developers, this is made available to all other developers immediately. 
+created by any of the developers, it is made available to all the other developers immediately. 
 As a consequence, versioning conflicts become nonexistent as all developers see a sing (and most 
-updated) version of the code at all times. Moreover, switching between versions, developers have an 
+updated) version of the code at all times. Moreover, when switching between versions, developers have an 
 immediate view of the complete state of the code at the moment the version was created or edited. 
 
 \begin{figure}[tbp]
@@ -54,7 +54,7 @@ interactions.
 %%
 \subsection{Product Variant Management}
 \label{sec:product-variant}
-In \ac{SPL} development product variants are managed through variability models, describing the 
+In \ac{SPL} development, product variants are managed through variability models, describing the 
 different components of the product, and the different options for each of these 
 components~\cite{pohl05}. A product variant consists of the composition of a base product with 
 different features, usually specialized for each costumer or purpose. This process requires developers 
@@ -93,7 +93,7 @@ contributions of other developers.
 Developers' code is differentiated by highlighting, in a unique color, the code contributed by each 
 developer, as shown in \fref{fig:layers}. First, colored code, offers a first-hand view about the 
 contributions of each team member, increasing awareness  about code owners, and coordination to 
-develop or fix code increments. Second, code highlighting is used as a means to identify feature a 
+develop or fix code increments. Second, code highlighting is used as a means to identify features a 
 developer has worked on, enabling the composition of specific product variants by selecting the work 
 of developers associated to specific features. 
 
@@ -120,7 +120,7 @@ environment~\cite{salvaneschi+12survey}. \ac{COP} consists of three main abstrac
 \emph{Contexts}, \emph{Behavioral adaptations}, \emph{Context activations}.
 
 \paragraph{Contexts} represent semantically meaningful situations gathered from the systems 
-surrounding environment~\cite{dey01}. Contexts are defined as first-class entities of the system that 
+surrounding the environment~\cite{dey01}. Contexts are defined as first-class entities of the system that 
 are manipulated in reaction to external stimulus (\eg changes in sensed information, actions executed 
 by users). A context can be in an active state, stating that the situation it represents is taking place in 
 the surrounding environment. Otherwise, the context is said to be inactive.
@@ -128,7 +128,7 @@ the surrounding environment. Otherwise, the context is said to be inactive.
 \paragraph{Behavioral adaptations} are fine-grained behavior definitions associated to one or several 
 context entities. Behavioral adaptations dictate the observable behavior of a system under a particular 
 situation sensed from the surrounding environment. The combination of behavioral adaptations and 
-contexts constitute what we call and \emph{adaptation}.
+contexts constitute what we call an \emph{adaptation}.
 
 \paragraph{Context activations} correspond to the systems' reaction to the surrounding environment. 
 Whenever a context is sensed to be active (the information associated with the contexts satisfies a 
@@ -144,7 +144,7 @@ time.
 
 %%%%
 \subsubsection{CollabIDE Internals}
-To implement the features described in \fref{sec:collabide}, we create a one to one association 
+To implement the features described in \fref{sec:collab-ide}, we create a one to one association 
 between adaptations and versions~\cite{}.
 Versions consist of the code introduced by developers and the conditions of the surrounding 
 environment in which this take place. 
@@ -171,7 +171,7 @@ behavioral adaptation associated to such context (\fref{ln:association}) as show
 \end{ctxtraits}
 
 Additionally, the system defines a context per user, associating all code increments to this context too. 
-The purpose of this additional association is twofold. On the one hand, we use it to select product 
+The purpose of this additional association is twofold. On one hand, we use it to select product 
 variants per user. On the other hand, it is used to adapt the behavior of the text rendering in Firebase, 
 in order to display the colored layer indicating the contributions for each developer.
 
