@@ -8,7 +8,7 @@
 
 To validate the appropriateness of CollabIDE, we define two research questions:
 \begin{enumerate*}[label=(\arabic*)]
-\item Does an automated \ac{VCS} improves productivity of software development?
+\item Does an automated \ac{VCS} improve productivity in software development?
 \item Is it possible to use software versions to generate multiple software variants from a product?
 \end{enumerate*} 
 To answer these questions, we conducted an empirical evaluation 
@@ -26,20 +26,17 @@ conventional IDE following a set of instructions that aimed to emulate the workf
 
 %%%%
 \subsubsection{Experiment 1: Software development in a distributed set-up}
-The objective of this experiment was to quantify the overhead reduction that can be achieved with CollabIDE and answer the first research question.
-For the experiment, groups of developers had to use JavaScript to accomplish their given programming tasks. The specific instruction they had to follow was that they had to use version control periodically so that both team members code remained up to date with their partner's changes through the experiment. 
+The objective of this experiment was mainly to quantify the overhead reduction that can be achieved when using CollabIDE in a distributed set-up in order to answer the first research question. For the experiment, groups of developers had to implement a set of common graph algorithms using only JavaScript. The specific instruction they had to follow was that they needed to use version control periodically so that both team members code remained up to date with their partner's changes through the experiment. 
 
 
 %%%%
 \subsubsection{Experiment 2: Product variants development and deployment}
-In this second experiment the objective was to also quantify the overhead reduction that can be achieved with CollabIDE within a product line development context where various product variants product must be maintained.
-For the experiment, individual developers had to program in Java or JavaScript depending on the IDE they used to complete their tasks. Additionally, they had to use version control to manage the different product variants that were involved in the programming tasks.
+In this second experiment the objective was to also quantify the overhead reduction that can be achieved with CollabIDE in a product lines set-up, this time to answer our first and second research question. In this case, the programming task was to implement a set of data structures with basic functionality using JavaScript  or Java. Each data structure also had to be a variant of a given base data structure. Participants had to use version control to manage the different product variants that were involved in the programming tasks.
 
 %%%%
 \subsection{Experiment Setup}
 
-Six developers were gathered for the Distributed Software Development experiment, then they were split into groups of two. Two groups would be using CollabIDE and the remaining group would be using Sublime Text in conjunction with git and github. The programming task for this experiment was to implement a set of common graph algorithms using only JavaScript. The participants were given a total of ninety minutes to accomplish this task. Each group was required to obtain their partner’s changes every fifteen minutes using their tools at hand.
-In the Software Product Lines experiment, a different group of four developers was gathered. Two of them would be using CollabIDE and the other two would be using Eclipse in conjunction with git and github. In this case, the programming task was to implement a set of data structures with some basic functionality using JavaScript (CollabIDE) or Java (Eclipse). Each data structure also had to be a variant of a given base structure. These participants were also given ninety minutes to complete their task. In order to manage the different product variants, the participants were requested to use version control in each of their IDEs.
+Six developers were gathered for the first experiment, then they were split into groups of two. Two groups would be using CollabIDE and the remaining group would be using Sublime Text in conjunction with git and github. The participants were given a total of 90 minutes to accomplish this task. Each group was required to obtain their partner’s changes every fifteen minutes using their tools at hand. In the Software Product Lines experiment, a different group of four developers was gathered. Two of them would be using CollabIDE and the other two would be using Eclipse in conjunction with git and github. These participants were also given 90 minutes to complete their task. For experiment 2, There was no constraint in how often participants needed to use version control.
 
 
 \authorcomment[missing]{NC}{Tools, exercise}
