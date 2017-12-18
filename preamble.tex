@@ -259,6 +259,12 @@ morestring=[b]"
 \let\orig@endtable\endtable
 \renewcommand*{\endtable}{\vspace{-1ex}\orig@endtable} % after
 
+% Squeeze snippets
+\let\orig@lstlisting\lstlisting
+\renewcommand*{\lstlisting}{\orig@lstlisting\vspace{-2em}} % before
+\let\orig@endlstlisting\endlstlisting
+\renewcommand*{\endlstlisting}{\vspace{-3ex}\orig@endlstlisting} % after
+
 % Squeeze captions
 \usepackage{caption}
 \captionsetup[figure]{aboveskip=1ex,belowskip=-1em}
