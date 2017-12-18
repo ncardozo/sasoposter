@@ -43,13 +43,13 @@ managed in CollabIDE.
 
 A differentiating feature of CollabIDE is that versions are live. That is, every time a new version is 
 created by any of the developers, it is made available to all the other developers immediately. 
-As a consequence, versioning conflicts become nonexistent as all developers see a sing (and most 
-updated) version of the code at all times. Moreover, when switching between versions, developers have an 
+As a consequence, versioning conflicts become nonexistent as all developers see the latest 
+version of the code at all times. Moreover, when switching between versions, developers have an 
 immediate view of the complete state of the code at the moment the version was created or edited. 
 
 \begin{figure}[tbp]
   \centering
-  \includegraphics[width=0.6\textwidth]{img/fig4-collabIDEVersionManagement}
+  \includegraphics[width=0.5\textwidth]{img/fig4-collabIDEVersionManagement}
   \caption{Version visualization and management in CollabIDE}
   \label{fig:versions}
 \end{figure}
@@ -65,7 +65,7 @@ In \ac{SPL} development, product variants are managed through variability models
 different components of the product, and the different options for each of these 
 components~\cite{pohl05}. A product variant consists of the composition of a base product with 
 different features, usually specialized for each costumer or purpose. This process requires developers 
-to define beforehand both, the base product, and the variations points (\ie those features that can be 
+to define beforehand both, the base product, and the variation points (\ie those features that can be 
 interchanged with other features). This process is time consuming for the project setup, and fixed in 
 the points where variations may take place.
 
@@ -85,7 +85,7 @@ processes.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.6\textwidth]{img/fig3-collabIDEContributionManagement}
+  \includegraphics[width=0.5\textwidth]{img/fig3-collabIDEContributionManagement}
   \caption{Product composition through contribution selection}
   \label{fig:contribution}
 \end{figure}
@@ -152,12 +152,12 @@ time.
 %%%%
 \subsubsection{CollabIDE Internals}
 To implement the features described in \fref{sec:collab-ide}, we create a one to one association 
-between adaptations and versions~\cite{}.
+between adaptations and versions.
 Versions consist of the code introduced by developers and the conditions of the surrounding 
 environment in which this take place. 
 
 As a cloud-based platform CollabIDE is implemented using ECMAScript, using 
-node\footnote{\url{http://nodejs.org/}} for the backend, and Firepad,\footnote{\url{https://firepad.io/\#1}} 
+node\footnote{\url{http://nodejs.org/}} for the backend, and Firepad\footnote{\url{https://firepad.io/\#1}}, 
 an open source collaborative text editor, for the frontend.
 For the context management we use Context Traits~\cite{gonzalez13}. 
 
@@ -165,22 +165,30 @@ As mentioned before, versions and product variants are defined based on the time
 increment is defined, and the user defining such increment, respectively. We use these two situations 
 as our contexts.
 Whenever users log to the system a context is automatically defined by the system using the login 
-timestamp as its identifier as follows
+timestamp as its identifier as follows:
 \begin{ctxtraits}
  var 190520171428 = new cop.Context{
    name: "190520171428"
  }
 \end{ctxtraits}
-Having defined a context, all code increments are stored (Lines \ref{ln:ba-init}-\ref{ln:ba-end}) as a 
-behavioral adaptation associated to such context (\fref{ln:association}) as shown next
+\\
+Having defined a context, all code increments are stored as a 
+behavioral adaptation associated to such context as shown next:
 \begin{ctxtraits}
-
+ var increments = {};
+ var OwnerTrait = Trait({
+	...
+ 	// Trait definition for code ownership
+	...
+	this.proceed();
+ 	}
+ });
+190520171428.adapt(increments, OwnerTrait);
 \end{ctxtraits}
-
+\\
 Additionally, the system defines a context per user, associating all code increments to this context too. 
 The purpose of this additional association is twofold. On one hand, we use it to select product 
 variants per user. On the other hand, it is used to adapt the behavior of the text rendering in Firebase, 
 in order to display the colored layer indicating the contributions for each developer.
-
 
 \endinput
