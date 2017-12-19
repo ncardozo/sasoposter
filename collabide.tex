@@ -155,9 +155,9 @@ time.
 To implement the features described in \fref{sec:collab-ide}, we create a one to one association 
 between adaptations and versions.
 Versions consist of the code introduced by developers and the conditions of the surrounding 
-environment in which this take place. 
+environment in which these take place. 
 
-As a cloud-based platform CollabIDE is implemented in ECMAScript, using 
+As a cloud-based platform, CollabIDE is implemented in ECMAScript, using 
 node.js\footnote{\url{http://nodejs.org/}} for the backend, and 
 Firepad,\footnote{\url{https://firepad.io/\#1}} 
 an open source collaborative text editor, for the frontend.
@@ -165,17 +165,20 @@ To define and manage contexts we use Context Traits~\cite{gonzalez13}.
 
 As mentioned before, versions and product variants are defined based on the time in which a code 
 increment is defined, and the user defining such increment, respectively. Each of these situations 
-defines a condition in which the code is created. Therefore, they constitute contexts.
-First, whenever users log into the system a context is automatically defined by the system 
-using the timestamp as its identifier, as follows
+defines a condition in which the code is created; therefore, they constitute contexts.
+First, whenever users log into the system, a context is automatically defined
+using the timestamp as its identifier. The following snippet show the example of a context created 
+for a contribution made on 19/05/2017 at 14:28
+\vspace{-3ex}
 \begin{ctxtraits}
  var 190520171428 = new cop.Context{
    name: "190520171428"
  }
 \end{ctxtraits}
+\vspace{-3ex}
 
 Additionally, the system defines a context per user, associating all code increments to this context too. 
-The purpose of this additional association is twofold. On one hand, we use it to select product 
+The purpose of this additional association is twofold. On the one hand, we use it to select product 
 variants per user. On the other hand, it is used to adapt the behavior of the text rendering in Firebase, 
 in order to display the colored layer indicating the contributions for each developer.
 
@@ -185,16 +188,19 @@ the text highlighting feature for a particular developer. Behavioral adaptations
 associated to contexts (\fref{ln:association}) to be used in the system, in this case adapting the 
 \scode{defineVisibility} function of the \scode{highlighter} Firebase object. In this example, as a 
 particular developer is selected (as in \fref{fig:contribution}), this activates the \ctx{DevContext}, 
-coloring the text with the color associated to the developer.
+coloring the text with the color associated to the developer. The \scode{proceed} call in \fref{ln:proceed} 
+works as a super-call, to invoke the original behavior of the system (\ie without adaptation)
+
+\vspace{-3ex}
 \begin{ctxtraits}[numbers=left]
  HighlightTrait = Trait = ({ ` \label{ln:ba-init} `
    defineVisibility : function() {
      developerRule.style.display = "inline";
-     this.proceed();
+     this.proceed();  `\label{ln:proceed} `
    }
  })` \label{ln:ba-end} `
  DevContext.adapt(highlighter, HighlightTrait); ` \label{ln:association} `
 \end{ctxtraits}
-
+\vspace{-3ex}
 
 \endinput
