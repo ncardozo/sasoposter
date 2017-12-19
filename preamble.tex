@@ -249,9 +249,9 @@ morestring=[b]"
 
 % Squeeze figures
 \let\orig@figure\figure
-\renewcommand*{\figure}[1][]{\orig@figure[#1]\vspace{-0.5em}} % before
+\renewcommand*{\figure}[1][]{\orig@figure[#1]\vspace{-0.6em}} % before
 \let\orig@endfigure\endfigure
-\renewcommand*{\endfigure}{\vspace{-0.5ex}\orig@endfigure} % after
+\renewcommand*{\endfigure}{\vspace{-0.7ex}\orig@endfigure} % after
 
 % Squeeze tables
 \let\orig@table\table
@@ -277,8 +277,8 @@ morestring=[b]"
 %\renewcommand*{\section}[1]{\orig@section{#1}\vspace{-.2ex}}
 
 % Squeeze subsections
-%\let\orig@subsection\subsection
-%\renewcommand*{\subsection}[1]{\orig@subsection{#1}\vspace{-.2ex}}
+\let\orig@subsection\subsection
+\renewcommand*{\subsection}[1]{\orig@subsection{#1}\vspace{-.5ex}}
 
 \makeatother
 

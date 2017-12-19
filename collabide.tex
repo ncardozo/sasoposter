@@ -17,7 +17,7 @@ CollabIDE has three key features which help to reduce the overhead of managing v
 
 \begin{figure}[tbp]
   \centering
-  \includegraphics[width=0.8\textwidth]{img/collabIDEGeneral}
+  \includegraphics[width=0.7\textwidth]{img/collabIDEGeneral}
   \caption{General view of CollabIDE}
   \label{fig:general-view}
 \end{figure}
@@ -43,14 +43,14 @@ the versions pane of the interface. \fref{fig:versions} shows the way product ve
 managed in CollabIDE. 
 
 A differentiating feature of CollabIDE is that versions are live. That is, every time a new version is 
-created by any of the developers, it is made available to all the other developers immediately. 
-As a consequence, versioning conflicts become nonexistent as all developers see the latest 
+created by any of the developers, it is made available to all developers immediately. 
+As a consequence, versioning conflicts become nonexistent since developers see the latest 
 version of the code at all times. Moreover, when switching between versions, developers have an 
 immediate view of the complete state of the code at the moment the version was created or edited. 
 
 \begin{figure}[tbp]
   \centering
-  \includegraphics[width=0.5\textwidth]{img/fig4-collabIDEVersionManagement}
+  \includegraphics[width=0.45\textwidth]{img/fig4-collabIDEVersionManagement}
   \caption{Version visualization and management in CollabIDE}
   \label{fig:versions}
 \end{figure}
@@ -86,7 +86,7 @@ processes.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.5\textwidth]{img/fig3-collabIDEContributionManagement}
+  \includegraphics[width=0.45\textwidth]{img/fig3-collabIDEContributionManagement}
   \caption{Product composition through contribution selection}
   \label{fig:contribution}
 \end{figure}
@@ -117,8 +117,7 @@ of developers associated to specific features.
 \subsection{Implementation}
 \label{sec:implementation}
 
-The implementation of CollabIDE is based on the \acf{COP} paradigm, used for software development 
-as part of a cloud-based service.
+The implementation of CollabIDE is based on the \acf{COP} paradigm, incorporated in Firepad.\footnote{\url{https://firepad.io/\#1}}
 
 %%%%
 \subsubsection{\ac{COP} in a Nutshell}
@@ -159,8 +158,7 @@ environment in which these take place.
 
 As a cloud-based platform, CollabIDE is implemented in ECMAScript, using 
 node.js\footnote{\url{http://nodejs.org/}} for the backend, and 
-Firepad,\footnote{\url{https://firepad.io/\#1}} 
-an open source collaborative text editor, for the frontend.
+Firepad, an open source collaborative text editor, for the frontend.
 To define and manage contexts we use Context Traits~\cite{gonzalez13}. 
 
 As mentioned before, versions and product variants are defined based on the time in which a code 
@@ -169,13 +167,13 @@ defines a condition in which the code is created; therefore, they constitute con
 First, whenever users log into the system, a context is automatically defined
 using the timestamp as its identifier. The following snippet show the example of a context created 
 for a contribution made on 19/05/2017 at 14:28
-\vspace{-3ex}
+\vspace{-4ex}
 \begin{ctxtraits}
  var 190520171428 = new cop.Context{
    name: "190520171428"
  }
 \end{ctxtraits}
-\vspace{-3ex}
+\vspace{-4ex}
 
 Additionally, the system defines a context per user, associating all code increments to this context too. 
 The purpose of this additional association is twofold. On the one hand, we use it to select product 
@@ -191,7 +189,7 @@ particular developer is selected (as in \fref{fig:contribution}), this activates
 coloring the text with the color associated to the developer. The \scode{proceed} call in \fref{ln:proceed} 
 works as a super-call, to invoke the original behavior of the system (\ie without adaptation)
 
-\vspace{-3ex}
+\vspace{-3.5ex}
 \begin{ctxtraits}[numbers=left]
  HighlightTrait = Trait = ({ ` \label{ln:ba-init} `
    defineVisibility : function() {
@@ -201,6 +199,6 @@ works as a super-call, to invoke the original behavior of the system (\ie withou
  })` \label{ln:ba-end} `
  DevContext.adapt(highlighter, HighlightTrait); ` \label{ln:association} `
 \end{ctxtraits}
-\vspace{-3ex}
+\vspace{-4ex}
 
 \endinput
