@@ -12,7 +12,7 @@ CollabIDE has three key features which help to reduce the overhead of managing v
 \begin{enumerate*}[label=(\arabic*)] 
 \item version management, 
 \item product variant management, and 
-\item concurrent development.
+\item collaborative development.
 \end{enumerate*}
 
 \begin{figure}[tbp]
@@ -93,9 +93,9 @@ processes.
 
 
 %%
-\subsection{Concurrent Development}
+\subsection{Collaborative Development}
 
-CollabIDE offers a feature for concurrent development. Taking advantage of the \ac{VCS}, developers 
+CollabIDE offers a feature for collaborative development. Taking advantage of the \ac{VCS}, developers 
 are able to work concurrently on the same code base, having immediate feedback about the 
 contributions of other developers.
 Developers' code is differentiated by highlighting, in a unique color, the code contributed by each 
@@ -124,10 +124,10 @@ The implementation of CollabIDE is based on the \acf{COP} paradigm, incorporated
 \ac{COP} is a programming paradigm designed for the dynamic adaptation of software systems based 
 on context information gathered from the system's surrounding execution 
 environment~\cite{salvaneschi+12survey}. \ac{COP} consists of three main abstractions: 
-\emph{Contexts}, \emph{Behavioral adaptations}, \emph{Context activations}.
+\emph{Contexts}, \emph{Behavioral adaptations}, and \emph{Context activations}.
 
-\paragraph{Contexts} represent semantically meaningful situations gathered from the systems 
-surrounding the environment~\cite{dey01}. Contexts are defined as first-class entities of the system that 
+\paragraph{Contexts} represent semantically meaningful situations gathered from a system's 
+surrounding environment~\cite{dey01}. Contexts are defined as first-class entities of the system that 
 are manipulated in reaction to external stimulus (\eg changes in sensed information, actions executed 
 by users). A context can be in an active state, stating that the situation it represents is taking place in 
 the surrounding environment. Otherwise, the context is said to be inactive.
