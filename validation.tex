@@ -57,7 +57,10 @@ obtain their partner’s changes every 15 minutes using the tools at hand. For e
 group of four developers working individually was gathered. Two of them using CollabIDE and the 
 other two using Eclipse in conjunction with git and github. These participants were also given 90 
 minutes to complete their task. For experiment 2, there was no constraint in how often participants 
-needed to use version control.
+needed to use version control. On both experiments we made sure the participants that weren't employing
+CollabIDE had prior experience with their respective IDEs. The participants that used CollabIDE were presented
+with a small explanation of how to use its features. We avoided giving a detailed explanation with the intent of
+knowing how intuitive the participants would think the IDE felt.
 	
 %%%%
 \subsection{Results}
@@ -70,9 +73,9 @@ research questions proposed initially.
 
 \fref{fig:resultsTableCollaborative} shows the results for each group of participants and their 
 backgrounds. The two groups using CollabIDE achieved a higher completion rate, on average $11\%$ 
-more tasks completed than the control group (\fref{fig:completionCollaborative}). On top of that, they 
+more tasks completed than the control group. On top of that, they 
 also spent significantly less time performing actions related to version control, an average of $33.2$  
-minutes less (\fref{fig:versionControlCollaborative}). The higher completion rate achieved by the groups 
+minutes less. The higher completion rate achieved by the groups 
 that used CollabIDE can be attributed to the fact that the developers could spend more time coding as 
 they didn't have to invest much in version control. It is clear why there is such a significant difference in 
 time for both IDEs results. While the control group had to follow the common git workflow of committing, 
@@ -96,28 +99,14 @@ automated \ac{VCS} can indeed increase productivity in software development.
   \label{fig:resultsTableCollaborative}
 \end{figure}
 
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.7\textwidth]{img/completionCollaborative}
-  \caption{Completion percentage graph for experiment 1}
-  \label{fig:completionCollaborative}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.7\textwidth]{img/versionControlCollaborative}
-  \caption{Time spent in version control graph for experiment 1}
-  \label{fig:versionControlCollaborative}
-\end{figure}
-
 \subsubsection{Experiment 2 Results}
 
 \fref{fig:resultsTableProductLine} shows the results for each developer. Similar to the first experiment, 
 the developers that employed CollabIDE obtained better results, but in this case, the difference 
 between using an IDE versus using the other was not very significative. With CollabIDE, the 
-developers finished an average of $4\%$ more tasks (\fref{fig:completionProductLine}) and spent 
-$2.83$ minutes less in version control than the developers using Eclipse 
-(\fref{fig:versionControlProductLine}). The process of creating new product variants and their 
+developers finished an average of $4\%$ more tasks and spent 
+$2.83$ minutes less in version control than the developers using Eclipse.
+ The process of creating new product variants and their 
 respective functionalities varied significantly in each IDE. With Eclipse and git, participants had to 
 create a branch for each variant and then checkout between branches when they needed to work on a 
 variant’s specific code. Using CollabIDE, participants needed to first create a product version for each 
@@ -152,20 +141,6 @@ development model.
   \includegraphics[width=1\textwidth]{img/resultsTableProductLine}
   \caption{Experiment 2 results}
   \label{fig:resultsTableProductLine}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.7\textwidth]{img/completionProductLine}
-  \caption{Completion percentage graph for experiment 2}
-  \label{fig:completionProductLine}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.7\textwidth]{img/versionControlProductLine}
-  \caption{Time spent in version control graph for experiment 2}
-  \label{fig:versionControlProductLine}
 \end{figure}
 
 \subsubsection{Survey}

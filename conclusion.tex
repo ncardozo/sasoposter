@@ -33,8 +33,12 @@ made is the possibility of managing various files and folders as a software deve
 relies on only one file. Furthermore, there are many ways the existing features can be tweaked to make 
 them better at approaching the problem they intend to solve. Some examples would be introducing 
 additional code highlighting, a code history feature that lets users navigate to a specific change made 
-or even letting different product variants be merged in a similar fashion of how it’s done on git. 
-
+or even letting different product variants be merged in a similar fashion of how it’s done on git. Another 
+limitation of CollabIDE that is worth discussing is the maximum amount of developers in a project. Currently CollabIDE supports
+up to 8 developers. This is due to the need to identify each one with an easily distinguishable color.
+If the number of developers was higher it would get increasingly difficult to choose colors that can be distinguished from one another.
+This limitation is worth approaching for the case of open-source projects
+where there can be a high number of developers lending their contributions in single or multiple files.
 As future work, we plan to conduct a more extensive case study to evaluate the relevance of CollabIDE 
 in larger development teams. Additionally, we see the value of the tool for code reviews, therefore we 
 want to extend CollabIDE with code productivity metrics (\eg Lines of Code, code clones) and analysis 
