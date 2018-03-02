@@ -17,7 +17,7 @@ CollabIDE has three key features which help to reduce the overhead of managing v
 
 \begin{figure}[tbp]
   \centering
-  \includegraphics[width=1\textwidth]{img/collabIDEGeneral}
+  \includegraphics[width=0.9\textwidth]{img/collabIDEGeneral}
   \caption{General view of CollabIDE}
   \label{fig:general-view}
 \end{figure}
@@ -166,12 +166,12 @@ node.js\footnote{\url{http://nodejs.org/}} for the backend, and
 Firepad, an open source collaborative text editor, for the frontend.
 To define and manage contexts we use Context Traits~\cite{gonzalez13}. 
 
-As mentioned before, versions and product variants are defined based on the time in which a code 
-increment is defined, and the user defining such increment, respectively. Each of these situations 
-defines a condition in which the code is created; therefore, they constitute contexts.
+As mentioned before, versions and product variants are defined dynamically based on the time in 
+which a code increment is defined, and the user defining such increment, respectively. Each of 
+these situations defines a condition in which the code is created; therefore, they constitute contexts.
 First, whenever users log into the system, a context is automatically defined
 using the timestamp as its identifier. The following snippet show the example of a context created 
-for a contribution made on 19/05/2017 at 14:28
+for a contribution made on $19/05/2017$ at $14:28$
 \vspace{-4ex}
 \begin{ctxtraits}
  var 190520171428 = new cop.Context{
@@ -182,8 +182,8 @@ for a contribution made on 19/05/2017 at 14:28
 
 Additionally, the system defines a context per user, associating all code increments to this context too. 
 The purpose of this additional association is twofold. On the one hand, we use it to select product 
-variants per user. On the other hand, it is used to adapt the behavior of the text rendering in Firebase, 
-in order to display the colored layer indicating the contributions for each developer.
+variants per user. On the other hand, it is used to adapt the behavior of the text rendering 
+in Firebase, in order to display the colored layer indicating the contributions for each developer.
 
 All code increments are recorded as part of a behavioral adaptation associated to a context. The 
 following code snippet defines the behavioral adaptation (Lines \ref{ln:ba-init}-\ref{ln:ba-end}) to modify 
@@ -205,5 +205,10 @@ works as a super-call, to invoke the original behavior of the system (\ie withou
  DevContext.adapt(highlighter, HighlightTrait); ` \label{ln:association} `
 \end{ctxtraits}
 \vspace{-4ex}
+
+Once all contexts and their associated behavioral adaptations are defined, these can be combined 
+dynamically to compose different variants of the system under development. Moreover, while the 
+system is running, is possible to switch between its versions, for example, to test/rollback new 
+features seamlessly. 
 
 \endinput

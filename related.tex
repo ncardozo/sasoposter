@@ -6,16 +6,21 @@
 \section{Related Work}
 \label{sec:related}
 
-Different tools are available for collaborative writing or coding.
+Different tools exist for collaborative writing or coding.
 In this section we discuss the features available in such tools and put them in perspective to CollabIDE.
 
 \paragraph
-{Collaborative writing platforms} like Google Docs are not designed for code editing, however, they 
-employ mechanics similar to those of CollabIDE’s. In Google Docs, changes made to a document are 
-asynchronous and saved automatically. Contributions by collaborators are visible in real time by 
-following user-specific markers. However,  changes are all merged into a single document as users 
-edit. Nonetheless, Color highlighting is used to highlight changes made by individual collaborators 
-when reviewing a document’s history.
+{Collaborative writing platforms} like Google Docs and 
+meetingwords\footnote{\url{http://meetingwords.com}} are not designed for code editing, 
+however, they employ mechanics similar to those of CollabIDE’s. In Google Docs, changes made to a 
+document are asynchronous and saved automatically. Contributions by collaborators are visible in real 
+time by following user-specific markers. However,  changes are all merged into a single document as 
+users edit. Nonetheless, color highlighting is used to highlight changes made by individual collaborators 
+when reviewing a document’s history. Meetingwords provides similar features to those in Google Docs, 
+with the additional feature of color highlighting for the editions each user contributes to the document. 
+Such color highlighting served as inspiration for the same feature in CollabIDE. However, this is just a 
+visual aid to see who contributed each part of the text, and cannot be manipulated as versions in 
+CollabIDE.
 
 \paragraph
 {Distributed tools for code editing} targeting development productivity have also been 
@@ -41,13 +46,3 @@ developers can focus on writing code rather than on performing additional action
 
 \endinput
 
-Ya que una de las funcionalidades principales de CollabIDE es la de permitir administrar distintas versiones de código, es necesario entonces discutir acerca de una de las herramientas de versionamiento más prominente y que tipo de operaciones esta le permite llevar a cabo a los desarrolladores que también son esenciales que tenga CollabIDE. Git\footnore{\url{https://git-scm.com/}} es un sistema de control de versiones diseñado para manejar cualquier proyectos de cualquier tamaño con eficiencia, a través de los años Git ha ido adquiriendo una enorme popularidad y se ha convertido en la herramienta principal de todo tipo de desarrolladores para llevar el versionamiento de sus proyectos, este incremento en popularidad se puede evidenciar en el hecho de que en el año 2009 el uso de git en proyectos de eclipse era de tan sólo el 2.4\%\footnote{\url{http://www.eclipse.org/org/press-release/Eclipse_Survey_2009_final.pdf}} y en el año 20014 alcanzo un porcentaje de uso del 33.3\%.\footnore{\url{https://www.slideshare.net/IanSkerrett/eclipse-community-survey-2014}} 
-
-Las principales operaciones que ofrece Git son las de hacer commit, push, pull, manejo de branches y merge. Un commit crea un snapshot de todos los archivos que hayan sido añadidos a una etapa de staging   
-y luego guarda el snapshot, esta es sin duda la operación más importante de git y es a partir de la cual inicia todo el flujo de trabajo con manejo de versiones. Un push actualiza un repositorio remoto que se puede encontrar alojado en páginas como Github\footenote{\url{github.com}} o Gitlab,\footenote{\url{about.gitlab.com}} en esta operación se actualizan todos los commits que se hayan hecho en el repositorio local y que no estén en el repositorio remoto. Un pull actualiza un repositorio local con los commits que se hayan hecho en un repositorio remoto que no estén presentes en el local. Las operaciones de push y pull son las que permiten que en un modelo de desarrollo distribuido todos los miembros de un equipo tengan versiones actualizadas del código de un proyecto que incluyen todos los cambios hechos por los demás miembros. Un branch se puede ver como una versión alterna del repositorio en dónde los commits del branch existen aislados de los commits de otras versiones o branches. Es posible hacer una analogía entre manejar un flujo de trabajo con branches y usar el modelo de desarrollo de líneas de producto, con este último se crean variantes de producto a partir de un conjunto de elementos base y en git se crean branches a partir de una versión base del repositorio. Un merge es una operación que es necesaria llevar a cabo cuando se quieren combinar los cambios de distintos autores en un mismo archivo o cuando se quiere combinar los cambios de dos branches, esta operación es la que normalmente consume más tiempo [2], debido a los posibles conflictos que pueden surgir que deben ser resueltos manualmente por el desarrollador. Con CollabIDE buscamos resolver reducir el overhead generado por las operaciones de control de versiones que ofrecen sistemas como git, en la sección 3 describimos como implementamos estas operaciones para lograr esta reducción. 
-
-2.3 Herramientas Distribuidas 
-
-Actualmente existen algunas soluciones que buscan brindar herramientas para mejorar la productividad en ambientes de desarrollo distribuido, a continuación, discutimos algunas de estas soluciones y como estas apuntan a resolver el problema planteado. En [6] Ghorashi et al. implemento un IDE llamado Jimbo que permite a los usuarios colaborar más fácilmente alrededor de un proyecto común, las principales características que ofrece Jimbo son: colaboración sincrónica y asincrónica, comunicación, preview en tiempo real y conocimiento de usuarios. De las características del IDE las más relevantes para nuestro problema son las de colaboración sincrónica y asincrónica y conocimiento de usuarios. Con la primera, Jimbo permite a los desarrolladores colaborar en un proyecto sin tener que preocuparse por conflictos. Con la segunda, Jimbo les permite a los desarrolladores hacer seguimiento de fragmentos de código que ellos elijan para luego recibir notificaciones cuando un cambio ocurra en este fragmento, esta característica ayuda a resolver un problema descrito en [2] en donde se dice que una de las principales causas de overhead es la falta awareness. CodeBunk [7] es un editor colaborativo de código online cuyas principales características son las de playback, administración de “Bunks” privados y los “Use Session”, de estas la más relevante es la de playback. La herramienta guarda la historia de todos los cambios hechos en una instancia de un editor y luego permite realizar un playback de todos estos cambios mostrando el orden en el que se hicieron. Esta característica ayuda a disminuir el problema de conflictos y a tener mayor awareness. 
-
-La tercera herramienta a discutir es la de Cloud9 [8], esta herramienta es un IDE colaborativo entre cuyas principales características esta la creación de workspaces, playback de edición, clonación de ambiente y acceso a terminal. Entre las características relevantes está la creación de workspaces en donde se elige una configuración inicial que disminuye el overhead originado en realizar una configuración manual. El playback de edición funciona de manera similar a CodeBunk en donde se puede ver en qué orden y en qué momento otros usuarios hicieron cambios en el código. El acceso a la terminal permite el uso de todos los comandos de git para llevar a cabo todo el control de versiones que sea necesario.
