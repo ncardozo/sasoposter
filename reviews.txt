@@ -1,0 +1,124 @@
+----------------------- REVIEW 1 ---------------------
+PAPER: 96
+TITLE: A collaborative IDE for dynamic multi-versioning and variant management
+AUTHORS: Santiago Beltran and Nicolás Cardozo
+
+
+----------- Overall evaluation -----------
+Summary: This paper presents CollabIDE, a programming environment for collaborative development using a "Google-Docs" style (as opposed to classical version systems) which also supports a simple variant selection taking ideas from context-oriented programming. The paper reports on an empirical study with 6 developers showing that, for the experiment, CollabIDE required less overhead related to version control and conflict resolution, and some (somwhat more marginal) gains related to variant creation (with 4 developers).
+
+Strengths:
+- Neat overall idea, which is also implemented in a tool
+- Validated by 2 empirical studies
+
+Weaknesses:
+- The size of the groups performing the empirical studies is very low (6 and 4 developers)
+- The tool is currently limited to projects consisting of one file, which is not realistic
+
+Evaluation:
+The paper is very well written, and overall I liked its underlying ideas. I think it can lead to interesting discussions in the conference, so I'm positive for its acceptance, even if the tool itself and the experiment performed had some limitations.
+
+Comments:
+I'm not sure if the "lightweight" approach to variant management will scale in practice. An explicit representation of variability (e.g. based on feature models) would probably have more advantages in the long run, as it may also enable e.g., analysis.
+
+Why not implementing the ideas on top of more complete IDEs, like Eclipse Che?
+
+The use of context-oriented programming seems like a good fit for run-time variability, but here I think you are dealing with design-time variability. Please clarify.
+
+In Sec 2.1, perhaps you need to clarify that you move to a synchronous collaboration approach, instead of asynchronous, as realied in standard CVS.
+
+The size of the experiments is way to low to be able to claim anything about the tool or the approach. Moreover, for the first one you choose Sublime Text... why not using more widely used IDEs like Eclipse or JetBrains?
+
+Minor comments
+I miss a paragraph with the paper organization in Sec 1.
+Some figures are too small, and moreover they rely on colours, which cannot be distinguished in B/W printouts.
+
+
+----------------------- REVIEW 2 ---------------------
+PAPER: 96
+TITLE: A collaborative IDE for dynamic multi-versioning and variant management
+AUTHORS: Santiago Beltran and Nicolás Cardozo
+
+
+----------- Overall evaluation -----------
+* SUMMARY:
+This paper presents CollabIDE, a web-based development environment (tool or IDE) prototype for distributed teams in a collaborative development environment. The tool incorporates an automated versioning mechanism to enable the generation of multiple software product variants from the code base. The main goal of CollabIDE is to improve developers' productivity. Therefore, developers using CollabIDE are expected to spend more time on code development and less in tasks related to the version control management. In order to evaluate CollabIDE, the authors proposed 2 RQs, designed and applied 2 experiments with small groups of developers, collected some measures and also applied a survey to the participants.
+
+* STRENGTHS:
+Paper is well written and easy to read. Technologies and concepts used to develop CollabIDE are presented either in text, references or in footnotes.
+
+CollabIDE is built on top of the dynamic behavior adaptation model proposed by Context-oriented Programming (COP).
+
+The IDE, since released with essential features described in Conclusion, has potential to be a useful tool to improve productivity.
+
+* WEAKNESSES:
+There is only one print screen of CollabIDE (Figure 1) and the figure is barely visible. Such figure and explanations stated along the paper are not enough to explain the actual behavior and potential benefits of the tool.
+
+With respect to the evaluation, the two experiments are too simple, and they were not sufficiently detailed in the paper. In particular, I expect an explanation of why and how these tasks reflect similar situations to a real-world development. Also, the evaluation was performed with very few participants and their distribution was unbalanced.
+
+The paper also lacks a better discussion of related work, focusing on recently published paper. In fact, I would recommend expanding and updating the reference list to incorporate some key recent papers in the area. 
+
+* COMMENTS:
+- I think Figures 2, 3 and 4 could be removed, since they are only fragments of Figure 1; and, Figure 1 could be enlarged to improve visibility.
+
+- The charts presented in Figures 6, 7, 9 and 10 are also unnecessary, since the information they show are already in table columns of Figures 5 and 8. 
+
+- Removing unnecessary figures would free some extra space to improve the description of CollabIDE and to give details about the experiments' designs, for instance. 
+
+- About Figures 5 and 8:
+* they could have a better quality because they are hard to read.
+* is it the column "Program(s)" really necessary?
+
+- Figure 8 could have a column with the language the participants choose.
+
+
+----------------------- REVIEW 3 ---------------------
+PAPER: 96
+TITLE: A collaborative IDE for dynamic multi-versioning and variant management
+AUTHORS: Santiago Beltran and Nicolás Cardozo
+
+
+----------- Overall evaluation -----------
+Summary: This paper presents CollabIDE, a cloud-based IDE for collaborative software development. It allows several developers to code at the same time in the same code base, keeping the view of each developer updated with all the changes made by all the others. CollabIDE automates the control of versions by automatically creating versions (although they may be created by the developers too). Since it keeps the same code base updated for all users, it avoids (merging) conflicts. The authors argue these features can be used for two main purposes: the first is to use the IDE as a regular version control system, but with more ease and less time spent by the developers; the second is for the creation and management of variational software (e.g. SPLs). The empirical evaluation realized by the authors seems to indicate there are benefits in using CollabIDE in both situations.
+
+Strengths: 
+Interesting idea, with possible real-world impact
+Extensible prototype  
+Paper very well written
+(Weak) Empirical validation
+
+Weaknesses:
+Weak empirical validation
+No link to the tool
+
+Comments: The work presented in this paper is quite interesting as indeed VCS are more and more present in the developers daily work. I believe this kind of work as the potential to have an impact on the development life cycle. However, there are a few issues I would like to raise.
+
+To propose a new development environment is always challenging because for it to be accepted it means the entire company/team needs to change, which is always difficult for humans beings. It would be quite interesting to have the features described implemented in an existing IDE such as Eclipse or IntelliJ; this would increase the potential of real-world impact. I understand the prototyping challenge would have been bigger though.
+
+On page 3 the authors write that "every code modification (regardless of its size) is marked as a new product increment”. Does this mean every new character entered by a developer? When saving the file? Could you please clarify?
+
+The authors also write that there are no merging conflicts. How exactly does it work? Is every character always showed for all the users (as in e.g. google docs)? What happens if two users change the same word/line? Or developers can only change their own code? This would decrease quite a bit the interest in the tool, as it is very common to rewrite code from other developers. Please clarify this in the paper.
+
+It is also not clear to me part of the variability management. I understand each user can select which of the other users he/she wants to see but is it possible to select just a part of other user’s work? What happens if a user produced two features and another just wants one of those? Is this possible? Please clarify in the paper.
+
+Regarding the interface, although it seems interesting, what happens if in the same project there are dozens of developers (say in a big (open-source) project)? It will be difficult to have noticeable different colors for all. Also, the list of developers will be quite big. Is the tool suitable for such kind of projects? This should also be discussed in the paper.
+
+The issues raised so far are important, but mostly they need clarification. 
+
+However, it seems that the weakest point of the paper is the evaluation. Although it is noteworthy the execution of an empirical validation with real users, the findings are difficult to generalize, mostly because of the number of users and their characteristics. 
+
+From figures 5 and 8, it seems the study participants are students. In this case, this doesn’t seem to be an issue, but it is always quite important o fully characterize the study participants. It is also not clear if the authors gave any kind of tutorial on the use of any of the tools used. This should also be clear. It is also not clear how the participants were distributed by the groups. This should have been random, or otherwise very well justified (e.g. to balance different groups knowledge, which didn’t seem to happen at all - see the following paragraph).
+
+In the first experiment, the control group got the most inexperienced and younger (in the program) students, and still, they were not more than 11% worse than the others. The fact that they are the most inexperienced and younger is not discardable when analyzing the results. Moreover, from my experience as a teacher, students in the first semesters (maybe up to 6 or so) do not know how to work with VCS. More data should have been collected on their knowledge on VCS. Also, the time spent in VCS should be divided by the participants, and not summed together. For all these reasons, the results do not seem to be generalizable for other settings (e.g. different kinds of users, or even other users, industrial setting, etc.).
+
+For the second experiment, there is no much difference between the two treatments. It doesn’t seem possible to make any conclusions from that.
+
+Note I understand very well how difficult it is to execute studies like these, as I also usually do them. But in this case, given the number of participants, it would have been better to focus on a single experiment, the one with more value to the authors. With more participants, it would have been easier to get more and better results.
+
+Finally, it would be interesting to have access to the tool.
+
+
+Small typos:
+* page 9: didnt
+* page 10: Eclipse and Git makes -> make
+* page 11: though -> thought
